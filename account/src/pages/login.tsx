@@ -7,8 +7,7 @@ import { ILoginDTO } from "@/typings/interface"
 import styles from './index.less'
 
 export default () => {
-  const rootExports = useRootExports()
-  const { history } = rootExports.default
+  const { history } = useRootExports().default
   const onFinish = (values: ILoginDTO) => {
     history.push('/home')
   }
