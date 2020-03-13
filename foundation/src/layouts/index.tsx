@@ -25,9 +25,6 @@ const recursiveRoutes = (route: IRoute) => route.routes ? (
 qiankunStart()
 autoRedirect()
 
-console.log(routerSidebarMap())
-
-
 export default (props: any) => {
   switch (routerSidebarMap()[location.pathname]) {
     case true:
