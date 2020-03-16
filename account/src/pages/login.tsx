@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useRootExports } from 'umi'
 import { Form, Input, Button, Checkbox } from 'antd'
 import { UserOutlined, LockOutlined } from '@ant-design/icons'
@@ -7,8 +7,13 @@ import { ILoginDTO } from "@/typings/interface"
 import styles from './index.less'
 
 export default () => {
+  useEffect(() => {
+    localStorage.clear()
+  }, [])
+
   const { history } = useRootExports().default
   const onFinish = (values: ILoginDTO) => {
+    localStorage.setItem('profile', JSON.stringify(values))
     history.push('/home')
   }
   return (

@@ -1,12 +1,16 @@
-import { IRoute, history } from 'umi'
+import { IRoute, history } from "umi"
 
 export const redirectMap: { [key: string]: string } = {
   '/': '/home',
 }
 
 export const autoRedirect = () => {
+  const pathname = location.pathname
+  if (pathname.charAt(pathname.length - 1) === '/') {
+    history.replace(pathname.substr(0, pathname.length - 1))
+  }
   Object.keys(redirectMap).forEach(sourcePath => {
-    if (location.pathname === sourcePath) {
+    if (pathname === sourcePath) {
       history.replace(redirectMap[sourcePath])
     }
   })
@@ -29,18 +33,15 @@ export const routes: IRoute[] = [
     path: '/sensor',
     title: '遥感监测',
     routes: [
+      { path: '/sensor/register', title: '设备注册' },
+      { path: '/sensor/devices', title: '设备列表' },
       {
-        path: '/sensor/register',
-        title: '设备注册',
+        path: '/sensor/data',
+        title: '数据查看',
         routes: [
-          {
-            path: '/sensor/register/all',
-            title: '测试三级路径'
-          }
+          { path: '/sensor/data/:id', title: '车辆详情', sidebar: false }
         ]
       },
-      { path: '/sensor/list', title: '设备列表' },
-      { path: '/sensor/data', title: '数据查看' }
     ]
   },
   {
@@ -58,64 +59,96 @@ export const routes: IRoute[] = [
 ]
 
 export const menu = {
-  routes: routes.filter(route => route.sidebar !== false),
+  routes,
   defaultSelectKeys: ['/'],
   defaultOpenKeys: ['/'],
-  generateDefaultKeys: function () {
-    if (location.pathname !== '/') {
-      const paths = location.pathname.split('/').filter(path => path.length > 0)
-      const defaultOpenKeys: string[] = []
-      paths.forEach(path => {
-        defaultOpenKeys.push(defaultOpenKeys.length === 0 ? `/${path}` : `${defaultOpenKeys[defaultOpenKeys.length - 1]}/${path}`)
+  generateDefaultOpenKeys: () => {
+    const paths = location.pathname.split('/').filter(path => path.length > 0)
+    const defaultOpenKeys: string[] = []
+    paths.forEach(path => {
+      defaultOpenKeys.push(defaultOpenKeys.length === 0 ? `/${path}` : `${defaultOpenKeys[defaultOpenKeys.length - 1]}/${path}`)
+    })
+    return defaultOpenKeys
+  },
+  generateDefaultSelectKeys: () => {
+    let defaultSelectedKey: string = '';
+    const recursiveRoutesToSetDefaultSelectKey = (routes: IRoute[]) => {
+      routes.forEach(route => {
+        if (route.routes) {
+          recursiveRoutesToSetDefaultSelectKey(route.routes)
+        }
+        if (
+          route.path?.includes(':')
+          && location.pathname.startsWith(route.path?.split(':')[0])
+        ) { // 动态路由处理
+          defaultSelectedKey = route.path?.split('/:')[0]
+        }
+        if (location.pathname === route.path) { // 静态路由直接匹配
+          defaultSelectedKey = route.path
+        }
       })
-      return {
-        defaultSelectKeys: [location.pathname],
-        defaultOpenKeys,
-      }
     }
+    recursiveRoutesToSetDefaultSelectKey(routes)
+    return [defaultSelectedKey]
+  },
+  generateDefaultKeys: function () {
+    const isIndex = location.pathname === '/'
     return {
-      defaultSelectKeys: this.defaultSelectKeys,
-      defaultOpenKeys: this.defaultOpenKeys,
+      defaultSelectKeys: isIndex ? this.defaultSelectKeys : this.generateDefaultSelectKeys(),
+      defaultOpenKeys: isIndex ? this.defaultOpenKeys : this.generateDefaultOpenKeys(),
     }
   }
 }
 
-// 支持无限子目录的面包屑数据结构生成器
-export const breadCrumbMap = () => {
-  const map: { [key: string]: string[] } = {}
-
-  const recursiveGenerateMap = (routes: IRoute[]) => {
+// 生成面包屑路径
+export const generateBreadCrumbPathArr = () => {
+  const breadCrumbArr: string[] = []
+  const pathname = location.pathname
+  const recursiveGenerateBreadCrumbArr = (routes: IRoute[]) => {
     routes.forEach(route => {
-      if (route.sidebar !== false) { // 首先都要确定展示在 sidebar
-        const pathArr = route.path?.split('/').filter(path => path.length > 0)
-        const lastPath = pathArr?.pop();
-
-        pathArr?.length === 0 // 说明是根菜单
-          ? map[`/${lastPath}`] = [route.title!]
-          // @ts-ignore
-          : map[route.path!] = [].concat(map[`/${pathArr?.join('/')}`], [route.title!])
-
-        if (route.routes) { // 有子路由，就递归
-          recursiveGenerateMap(route.routes)
-        }
+      if (pathname.startsWith(route.path!)) {
+        breadCrumbArr.push(route.title!)
+      }
+      if (
+        route.path?.includes(':')
+        && pathname.startsWith(route.path?.split(':')[0])
+      ) {
+        breadCrumbArr.push(route.title!)
+      }
+      if (route.routes) {
+        recursiveGenerateBreadCrumbArr(route.routes)
       }
     })
   }
-
-  recursiveGenerateMap(routes)
-  return map
+  recursiveGenerateBreadCrumbArr(routes)
+  return breadCrumbArr
 }
 
-export const routerSidebarMap = () => {
-  const map: { [key: string]: boolean } = {}
+export const shouldDisplayInFrame: () => undefined | boolean = () => {
+  let shouldDisplayInFrame = undefined
   const recursiveSidebarMap = (routes: IRoute[]) => {
     routes.forEach(route => {
-      map[route.path!] = route.sidebar !== false
-      if (route.routes) {
+      if (route.routes) { // 有子路由直接继续递归
         recursiveSidebarMap(route.routes)
       }
+      if (
+        route.path?.includes(':')
+        && location.pathname.startsWith(route.path?.split(':')[0])
+      ) { // 动态路由处理
+        shouldDisplayInFrame = true
+      }
+      if (location.pathname === route.path) { // 静态路由直接匹配
+        shouldDisplayInFrame = route.sidebar !== false
+      }
+      // 如果什么都匹配不上，说明没有声明这个路由，直接返回 undefined
     })
   }
   recursiveSidebarMap(routes)
-  return map
+  return shouldDisplayInFrame
+}
+
+export const checkLogged = () => {
+  if (!localStorage.getItem('profile')) {
+    history.replace('/account/login')
+  }
 }
