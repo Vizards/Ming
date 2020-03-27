@@ -1,37 +1,14 @@
 /*
- * COMMON helpers
- */
-const isArray = (arg) => Object.prototype.toString.call(arg) === '[object Array]'
-const getArrDifference = (arr1, arr2) => {
-  return arr1.concat(arr2).filter((v, i, arr) => {
-    return arr.indexOf(v) === arr.lastIndexOf(v);
-  })
-}
-/*
- * 所有的权限数据
- * 使用最简单的中文 id 数据，可扩展为复杂的菜单层级数组
- */
-const allPrivileges = [
-  '查看车辆数据',
-  '查看全部车辆',
-  '查看超标车辆',
-  '查看处理历史记录',
-  '查看车辆详情'
-]
-
-/*
  * 处理简单的父子菜单逻辑
  * 结构化菜单数据可自行书写逻辑支持
  */
 const additionalBannedPrivilegeId = (bannedPrivileges) => {
   if (
-    bannedPrivileges.includes('查看处理历史记录')
-    && bannedPrivileges.includes('查看超标车辆')
+    bannedPrivileges.includes('查看超标车辆')
     && bannedPrivileges.includes('查看全部车辆')
   ) {
     bannedPrivileges.push('查看车辆数据')
   }
-  window.__bannedPrivileges = bannedPrivileges
   return bannedPrivileges
 }
 

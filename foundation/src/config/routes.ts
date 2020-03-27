@@ -1,3 +1,8 @@
+declare global {
+  interface Window {
+    __bannedPrivileges: string[]
+  }
+}
 import { IRoute, history } from "umi"
 
 export const redirectMap: { [key: string]: string } = {
@@ -35,8 +40,7 @@ export const routes: IRoute[] = [
     routes: [
       { path: '/car/all', title: '全部车辆', privilegeId: '查看全部车辆' },
       { path: '/car/overproof', title: '超标车辆', privilegeId: '查看超标车辆' },
-      { path: '/car/reviewed', title: '处理历史记录', privilegeId: '查看处理历史记录' },
-      { path: '/car/detail/:id', title: '车辆详情', sidebar: false }
+      { path: '/car/detail/:id', title: '车辆详情', sidebar: false, privilegeId: '查看车辆详情' }
     ]
   },
 ]
@@ -107,8 +111,17 @@ export const generateBreadCrumbPathArr = () => {
   return breadCrumbArr
 }
 
-export const shouldDisplayInFrame: () => undefined | boolean = () => {
-  let shouldDisplayInFrame = undefined
+export const getApplicationType: () => undefined | string = () => {
+  let applicationType: undefined | string = undefined
+  const privilegeDetection = (route: IRoute) => {
+    if (
+      route.privilegeId &&
+      window.__bannedPrivileges &&
+      window.__bannedPrivileges.includes(route.privilegeId)
+    ) { // 匹配到无权限的路由时
+      applicationType = '403'
+    }
+  }
   const recursiveSidebarMap = (routes: IRoute[]) => {
     routes.forEach(route => {
       if (route.routes) { // 有子路由直接继续递归
@@ -118,16 +131,18 @@ export const shouldDisplayInFrame: () => undefined | boolean = () => {
         route.path?.includes(':')
         && location.pathname.startsWith(route.path?.split(':')[0])
       ) { // 动态路由处理
-        shouldDisplayInFrame = true
+        applicationType = 'children'
+        privilegeDetection(route)
       }
       if (location.pathname === route.path) { // 静态路由直接匹配
-        shouldDisplayInFrame = route.sidebar !== false
+        applicationType = route.sidebar !== false ? 'children' : 'brother'
+        privilegeDetection(route)
       }
       // 如果什么都匹配不上，说明没有声明这个路由，直接返回 undefined
     })
   }
   recursiveSidebarMap(routes)
-  return shouldDisplayInFrame
+  return applicationType
 }
 
 export const checkLogged = () => {

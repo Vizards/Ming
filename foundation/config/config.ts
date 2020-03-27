@@ -6,7 +6,9 @@ export default defineConfig({
   },
   favicon: '/favicon.ico',
   copy: ['assets'],
-  scripts: [
-    { src: '/permission.js', defer: true }
-  ]
+  headScripts: [
+    { src: '/common.js' },
+    { src: '/global.js' },
+  ],
+  scripts: [{ src: '/permission.js', defer: true }]
 })

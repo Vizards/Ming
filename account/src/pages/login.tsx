@@ -10,7 +10,6 @@ const allPrivileges = [
   '查看车辆数据',
   '查看全部车辆',
   '查看超标车辆',
-  '查看处理历史记录',
   '查看车辆详情'
 ]
 
@@ -40,7 +39,6 @@ export default () => {
 
         <Form.Item
           name="privileges"
-          rules={[{ required: true, message: '权限必须分配' }]}
           label="权限分配"
         >
           <Checkbox.Group options={allPrivileges.map(privilege => {

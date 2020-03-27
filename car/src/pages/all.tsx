@@ -17,12 +17,17 @@ export default () => {
       <Divider />
       <h3>下面是一个权限控制的 button</h3>
       <Button
+        type="primary"
         onClick={() => history.push('/detail/1')}
         id="查看车辆详情"
       >
-        查看车辆详情
+        查看车辆1详情
       </Button>
-      <span>如果登录时未勾选「查看车辆详情」的权限，将看不到此按钮</span>
+      <p>如果登录时未勾选「查看车辆详情」的权限，将看不到此按钮</p>
+      <p>直接打开车辆详情的 URL可以看到 403 错误页面：</p>
+      <a href={`//${location.host}/car/detail/1`} target="_blank">
+        {location.host + '/car/detail/1'}
+      </a>
     </div>
   )
 }
