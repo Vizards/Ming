@@ -14,9 +14,9 @@ const subApps = [
     mountElementId: 'root-children'
   },
   {
-    name: 'sensor',
-    entry: '/sensor/index.html',
-    base: '/sensor',
+    name: 'car',
+    entry: '/car/index.html',
+    base: '/car',
     mountElementId: 'root-children'
   },
 ]
