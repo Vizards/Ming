@@ -20,7 +20,6 @@ export const routes: IRoute[] = [
   {
     path: '/home',
     title: '首页',
-    privilegeId: '查看数据大屏',
   },
   {
     sidebar: false, // 是否展示在左侧菜单栏，默认展示
@@ -32,7 +31,7 @@ export const routes: IRoute[] = [
   {
     path: '/car',
     title: '车辆数据',
-    privilegeId: '查看检测数据',
+    privilegeId: '查看车辆数据',
     routes: [
       { path: '/car/all', title: '全部车辆', privilegeId: '查看全部车辆' },
       { path: '/car/overproof', title: '超标车辆', privilegeId: '查看超标车辆' },
