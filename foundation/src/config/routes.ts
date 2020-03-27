@@ -19,43 +19,27 @@ export const autoRedirect = () => {
 export const routes: IRoute[] = [
   {
     path: '/home',
-    title: '首页'
+    title: '首页',
+    privilegeId: '查看数据大屏',
   },
   {
     sidebar: false, // 是否展示在左侧菜单栏，默认展示
     path: '/account',
     routes: [
       { path: '/account/login', title: '登录', sidebar: false },
-      { path: '/account/reset', title: '密码重置', sidebar: false }
     ],
   },
   {
-    path: '/sensor',
-    title: '遥感监测',
+    path: '/car',
+    title: '车辆数据',
+    privilegeId: '查看检测数据',
     routes: [
-      { path: '/sensor/register', title: '设备注册' },
-      { path: '/sensor/devices', title: '设备列表' },
-      {
-        path: '/sensor/data',
-        title: '数据查看',
-        routes: [
-          { path: '/sensor/data/:id', title: '车辆详情', sidebar: false }
-        ]
-      },
+      { path: '/car/all', title: '全部车辆', privilegeId: '查看全部车辆' },
+      { path: '/car/overproof', title: '超标车辆', privilegeId: '查看超标车辆' },
+      { path: '/car/reviewed', title: '处理历史记录', privilegeId: '查看处理历史记录' },
+      { path: '/car/detail/:id', title: '车辆详情', sidebar: false }
     ]
   },
-  {
-    path: '/cars',
-    title: '超标车辆',
-    routes: [
-      { path: '/cars/handle', title: '超标车辆处理' },
-      { path: '/cars/history', title: '历史记录' }
-    ]
-  },
-  {
-    path: '/log',
-    title: '系统日志'
-  }
 ]
 
 export const menu = {

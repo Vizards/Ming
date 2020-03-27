@@ -2,8 +2,7 @@ import { defineConfig } from 'umi';
 
 export default defineConfig({
   routes: [
-    { path: '/login', component: '@/pages/login' },
-    { path: '/reset', component: '@/pages/reset' }
+    { path: '/login', component: '@/pages/login', wrappers: ['@/wrappers/clear'], title: '登录' },
   ],
   base: '/account',
   qiankun: {

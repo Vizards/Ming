@@ -4,7 +4,7 @@ import styles from './index.less';
 export default () => {
   return (
     <div>
-      <h1 className={styles.title}>Sensor Car</h1>
+      <h1 className={styles.title}>Detail</h1>
     </div>
   );
 }

@@ -11,6 +11,7 @@ import {
 import BreadCrumb from "@/components/BreadCrumb"
 import Account from "@/components/Account"
 import Exception from "@/components/Exception"
+import Loading from "@/components/Loading"
 
 import styles from "./index.less"
 
@@ -19,7 +20,7 @@ const { SubMenu } = Menu
 
 const recursiveRoutes = (routes: IRoute[]) => {
   const generateMenuItem = (route: IRoute) => route.sidebar !== false && (
-    <Menu.Item key={route.path}>
+    <Menu.Item key={route.path} id={route.privilegeId}>
       <Link to={route.path!}>{route.title}</Link>
     </Menu.Item>
   )
@@ -29,7 +30,8 @@ const recursiveRoutes = (routes: IRoute[]) => {
       return route.routes.every(route => route.sidebar === false)
         ? generateMenuItem(route) // 如果子路由全部不展示在 sidebar，自己却展示在 sidebar，那就作为一个 Menu.Item
         : ( // 如果子路由中有展示在 sidebar 的，那么自己作为父级菜单
-          <SubMenu key={route.path} title={route.title}>
+          // @ts-ignore
+          <SubMenu key={route.path} title={route.title} id={route.privilegeId}>
             {recursiveRoutes(route.routes)}
           </SubMenu>
         )
@@ -46,7 +48,7 @@ export default () => {
       checkLogged()
       return (
         <Layout className={styles.layout}>
-          <Sider>
+          <Sider className={styles.sider}>
             <div className={styles.logo}>
               这里是标题 Logo
             </div>
@@ -59,13 +61,15 @@ export default () => {
               {recursiveRoutes(menu.routes)}
             </Menu>
           </Sider>
-          <Layout>
+          <Layout className={styles.main}>
             <Header className={styles.header}>
               <BreadCrumb />
               <Account />
             </Header>
             <Content className={styles.content}>
-              <div id="root-children" className={styles.children} />
+              <div id="root-children" className={styles.children}>
+                <Loading />
+              </div>
             </Content>
             <Footer className={styles.footer}>
               Copyright © 2020. Powered by 姜饼科技
@@ -74,7 +78,14 @@ export default () => {
         </Layout>
       )
     case false:
-      return <main id={`root-${location.pathname.split('/').filter(key => key.length > 0)[0]}`} />
+      return (
+        <main
+          id={`root-${location.pathname.split('/').filter(key => key.length > 0)[0]}`}
+          style={{ height: '100vh' }}
+        >
+          <Loading />
+        </main>
+      )
     case undefined:
       return <Exception type="404" />
   }

@@ -4,6 +4,7 @@
   "scripts": {
     "start": "umi dev",
     "build": "umi build",
+    "build:qiankun": "UMI_ENV=qiankun umi build",
     "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,md,json}'",
     "test": "umi-test",
     "test:coverage": "umi-test --coverage"
@@ -20,14 +21,14 @@
     ]
   },
   "dependencies": {
-    "@umijs/plugin-qiankun": "^2.0.5",
+    "@umijs/plugin-qiankun": "^2.0.6",
     "@umijs/preset-react": "1.x",
-    "@umijs/test": "^3.0.6",
-    "lint-staged": "^10.0.7",
-    "prettier": "^1.19.1",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
-    "umi": "^3.0.6",
+    "@umijs/test": "^3.0.14",
+    "lint-staged": "^10.0.9",
+    "prettier": "^2.0.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "umi": "^3.0.14",
     "yorkie": "^2.0.0"
   }
 }
