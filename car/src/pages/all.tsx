@@ -24,7 +24,7 @@ export default () => {
         查看车辆1详情
       </Button>
       <p>如果登录时未勾选「查看车辆详情」的权限，将看不到此按钮</p>
-      <p>直接打开车辆详情的 URL可以看到 403 错误页面：</p>
+      <p>即使直接打开车辆详情的 URL，也会看到 403 错误页面：</p>
       <a href={`//${location.host}/car/detail/1`} target="_blank">
         {location.host + '/car/detail/1'}
       </a>

@@ -7,7 +7,6 @@ import { ILoginDTO } from "@/typings/interface"
 import styles from './index.less'
 
 const allPrivileges = [
-  '查看车辆数据',
   '查看全部车辆',
   '查看超标车辆',
   '查看车辆详情'
@@ -16,6 +15,9 @@ const allPrivileges = [
 export default () => {
   const { history } = useRootExports().default
   const onFinish = (values: ILoginDTO) => {
+    if (!values.privileges) {
+      values.privileges = []
+    }
     localStorage.setItem('profile', JSON.stringify(values))
     history.push('/home')
   }
