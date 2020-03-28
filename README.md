@@ -49,7 +49,7 @@ Ming/car > $ yarn start
 
 ### 说明文档
 
-- [开发一个子应用]()
+- [开发一个子应用](https://github.com/Vizards/Ming/wiki/01.-开发一个子应用)
 - [children 级子应用与 brother 级子应用]()
 - [DOM 级权限控制]()
 - [基座声明式路由]()
@@ -114,6 +114,8 @@ Ming/dist > $ docker run -p 12580:3000 -d vizards/ming
 
 Ming 将会运行在 http://localhost:12580
 
+<br>
+
 # LICENSE
 
-[The Star And Thank Author License (SATA License)](https://github.com/Vizards/Ming/LICENSE.md)
+[The Star And Thank Author License (SATA License)](https://github.com/Vizards/Ming/LICENSE)
