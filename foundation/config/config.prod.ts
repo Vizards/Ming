@@ -1,25 +1,31 @@
-import { defineConfig } from 'umi'
+import { defineConfig } from 'umi';
 
 const subApps = [
   {
     name: 'account',
     entry: '/account/index.html',
     base: '/account',
-    mountElementId: 'root-account'
+    mountElementId: 'root-account',
   },
   {
     name: 'home',
     entry: '/home/index.html',
     base: '/home',
-    mountElementId: 'root-children'
+    mountElementId: 'root-children',
   },
   {
     name: 'car',
     entry: '/car/index.html',
     base: '/car',
-    mountElementId: 'root-children'
+    mountElementId: 'root-children',
   },
-]
+  {
+    name: 'oss',
+    entry: 'https://cloud.vizards.cc/ming/oss/index.html',
+    base: '/oss',
+    mountElementId: 'root-children',
+  },
+];
 
 export default defineConfig({
   qiankun: {
@@ -28,7 +34,7 @@ export default defineConfig({
       jsSandbox: false, // 是否启用 js 沙箱，默认为 false
       prefetch: true, // 是否启用 prefetch 特性，默认为 true
       defer: false, // 是否异步渲染，默认为 false
-    }
+    },
   },
   define: {
     'process.env.subApp': subApps,
@@ -37,4 +43,4 @@ export default defineConfig({
     dark: false,
   },
   hash: true,
-})
+});
