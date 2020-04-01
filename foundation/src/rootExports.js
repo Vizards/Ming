@@ -3,8 +3,7 @@
  * A: 因为 ts 文件它不生效，我也没办法
  */
 
-import { history } from 'umi'
+import { history } from 'umi';
+import { generatePrivilegesTreeData } from './utils/helpers';
 
-export default {
-  history,
-}
+export { history, generatePrivilegesTreeData };

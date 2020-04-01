@@ -175,21 +175,22 @@
     var r = n("q1tI"),
       o = n.n(r),
       i = n("vSPo"),
-      a = n("BAXY"),
-      u = n("KlKh"),
-      c = (n("cIOH"), n("hgVy"), n("TSYQ")),
-      l = n.n(c),
-      s = n("J84W"),
-      f = n.n(s),
-      p = n("kbBi"),
-      d = n.n(p),
-      h = n("sKbD"),
-      m = n.n(h),
-      y = n("RuYp"),
-      v = n.n(y),
-      g = n("H84U"),
-      b = n("6CfX"),
-      _ = function () {
+      a = n("HiTA"),
+      u = n("BAXY"),
+      c = n("KlKh"),
+      l = (n("cIOH"), n("hgVy"), n("TSYQ")),
+      s = n.n(l),
+      f = n("J84W"),
+      p = n.n(f),
+      d = n("kbBi"),
+      h = n.n(d),
+      m = n("sKbD"),
+      y = n.n(m),
+      v = n("RuYp"),
+      g = n.n(v),
+      b = n("H84U"),
+      _ = n("6CfX"),
+      w = function () {
         return r["createElement"](
           "svg",
           { width: "252", height: "294" },
@@ -531,8 +532,8 @@
           )
         );
       },
-      w = _,
-      O = function () {
+      O = w,
+      E = function () {
         return r["createElement"](
           "svg",
           { width: "254", height: "294" },
@@ -922,8 +923,8 @@
           )
         );
       },
-      E = O,
-      x = function () {
+      x = E,
+      k = function () {
         return r["createElement"](
           "svg",
           { width: "251", height: "294" },
@@ -1244,8 +1245,8 @@
           )
         );
       },
-      k = x;
-    function S(e, t, n) {
+      S = k;
+    function P(e, t, n) {
       return (
         t in e
           ? Object.defineProperty(e, t, {
@@ -1258,15 +1259,15 @@
         e
       );
     }
-    var P = { success: f.a, error: d.a, info: m.a, warning: v.a },
-      j = { 404: w, 500: E, 403: k },
-      C = Object.keys(j),
-      T = function (e, t) {
+    var j = { success: p.a, error: h.a, info: y.a, warning: g.a },
+      C = { 404: O, 500: x, 403: S },
+      T = Object.keys(C),
+      M = function (e, t) {
         var n = t.status,
           o = t.icon,
-          i = l()("".concat(e, "-icon"));
+          i = s()("".concat(e, "-icon"));
         if (
-          (Object(b["a"])(
+          (Object(_["a"])(
             !("string" === typeof o && o.length > 2),
             "Result",
             "`icon` is using ReactNode instead of string naming in v4. Please check `".concat(
@@ -1274,47 +1275,47 @@
               "` at https://ant.design/components/icon"
             )
           ),
-          C.includes("".concat(n)))
+          T.includes("".concat(n)))
         ) {
-          var a = j[n];
+          var a = C[n];
           return r["createElement"](
             "div",
             { className: "".concat(i, " ").concat(e, "-image") },
             r["createElement"](a, null)
           );
         }
-        var u = r["createElement"](P[n]);
+        var u = r["createElement"](j[n]);
         return r["createElement"]("div", { className: i }, o || u);
       },
-      M = function (e, t) {
+      A = function (e, t) {
         var n = t.extra;
         return (
           n &&
           r["createElement"]("div", { className: "".concat(e, "-extra") }, n)
         );
       },
-      A = function (e) {
-        return r["createElement"](g["a"], null, function (t) {
+      N = function (e) {
+        return r["createElement"](b["a"], null, function (t) {
           var n = t.getPrefixCls,
             o = t.direction,
             i = e.prefixCls,
             a = e.className,
             u = e.subTitle,
             c = e.title,
-            s = e.style,
+            l = e.style,
             f = e.children,
             p = e.status,
             d = n("result", i),
-            h = l()(
+            h = s()(
               d,
               "".concat(d, "-").concat(p),
               a,
-              S({}, "".concat(d, "-rtl"), "rtl" === o)
+              P({}, "".concat(d, "-rtl"), "rtl" === o)
             );
           return r["createElement"](
             "div",
-            { className: h, style: s },
-            T(d, e),
+            { className: h, style: l },
+            M(d, e),
             r["createElement"]("div", { className: "".concat(d, "-title") }, c),
             u &&
               r["createElement"](
@@ -1328,25 +1329,25 @@
                 { className: "".concat(d, "-content") },
                 f
               ),
-            M(d, e)
+            A(d, e)
           );
         });
       };
-    (A.defaultProps = { status: "info" }),
-      (A.PRESENTED_IMAGE_403 = j[403]),
-      (A.PRESENTED_IMAGE_404 = j[404]),
-      (A.PRESENTED_IMAGE_500 = j[500]);
-    var N,
-      R = A,
-      D = (n("+L6B"), n("gZBC")),
-      I = n.n(D),
-      L = n("BGR+"),
-      F = n("i8i4"),
-      z = n("/dDc"),
-      U = n("oHiP");
-    function B(e) {
+    (N.defaultProps = { status: "info" }),
+      (N.PRESENTED_IMAGE_403 = C[403]),
+      (N.PRESENTED_IMAGE_404 = C[404]),
+      (N.PRESENTED_IMAGE_500 = C[500]);
+    var R,
+      D = N,
+      I = (n("+L6B"), n("gZBC")),
+      L = n.n(I),
+      F = n("BGR+"),
+      z = n("i8i4"),
+      U = n("/dDc"),
+      B = n("oHiP");
+    function H(e) {
       return (
-        (B =
+        (H =
           "function" === typeof Symbol && "symbol" === typeof Symbol.iterator
             ? function (e) {
                 return typeof e;
@@ -1359,14 +1360,14 @@
                   ? "symbol"
                   : typeof e;
               }),
-        B(e)
+        H(e)
       );
     }
-    function H(e, t) {
+    function V(e, t) {
       if (!(e instanceof t))
         throw new TypeError("Cannot call a class as a function");
     }
-    function V(e, t) {
+    function W(e, t) {
       for (var n = 0; n < t.length; n++) {
         var r = t[n];
         (r.enumerable = r.enumerable || !1),
@@ -1375,31 +1376,31 @@
           Object.defineProperty(e, r.key, r);
       }
     }
-    function W(e, t, n) {
-      return t && V(e.prototype, t), n && V(e, n), e;
+    function K(e, t, n) {
+      return t && W(e.prototype, t), n && W(e, n), e;
     }
-    function K(e) {
+    function q(e) {
       return function () {
         var t,
-          n = Q(e);
-        if (Y()) {
-          var r = Q(this).constructor;
+          n = $(e);
+        if (Q()) {
+          var r = $(this).constructor;
           t = Reflect.construct(n, arguments, r);
         } else t = n.apply(this, arguments);
-        return q(this, t);
+        return G(this, t);
       };
     }
-    function q(e, t) {
-      return !t || ("object" !== B(t) && "function" !== typeof t) ? G(e) : t;
+    function G(e, t) {
+      return !t || ("object" !== H(t) && "function" !== typeof t) ? Y(e) : t;
     }
-    function G(e) {
+    function Y(e) {
       if (void 0 === e)
         throw new ReferenceError(
           "this hasn't been initialised - super() hasn't been called"
         );
       return e;
     }
-    function Y() {
+    function Q() {
       if ("undefined" === typeof Reflect || !Reflect.construct) return !1;
       if (Reflect.construct.sham) return !1;
       if ("function" === typeof Proxy) return !0;
@@ -1414,17 +1415,17 @@
         return !1;
       }
     }
-    function Q(e) {
+    function $(e) {
       return (
-        (Q = Object.setPrototypeOf
+        ($ = Object.setPrototypeOf
           ? Object.getPrototypeOf
           : function (e) {
               return e.__proto__ || Object.getPrototypeOf(e);
             }),
-        Q(e)
+        $(e)
       );
     }
-    function $(e, t) {
+    function X(e, t) {
       if ("function" !== typeof t && null !== t)
         throw new TypeError(
           "Super expression must either be null or a function"
@@ -1432,66 +1433,66 @@
       (e.prototype = Object.create(t && t.prototype, {
         constructor: { value: e, writable: !0, configurable: !0 },
       })),
-        t && X(e, t);
+        t && Z(e, t);
     }
-    function X(e, t) {
+    function Z(e, t) {
       return (
-        (X =
+        (Z =
           Object.setPrototypeOf ||
           function (e, t) {
             return (e.__proto__ = t), e;
           }),
-        X(e, t)
+        Z(e, t)
       );
     }
-    function Z(e) {
+    function J(e) {
       return !e || null === e.offsetParent;
     }
-    function J(e) {
+    function ee(e) {
       var t = (e || "").match(/rgba?\((\d*), (\d*), (\d*)(, [\.\d]*)?\)/);
       return !(t && t[1] && t[2] && t[3]) || !(t[1] === t[2] && t[2] === t[3]);
     }
-    var ee = (function (e) {
-        $(n, e);
-        var t = K(n);
+    var te = (function (e) {
+        X(n, e);
+        var t = q(n);
         function n() {
           var e;
           return (
-            H(this, n),
+            V(this, n),
             (e = t.apply(this, arguments)),
             (e.animationStart = !1),
             (e.destroyed = !1),
             (e.onClick = function (t, n) {
-              if (!(!t || Z(t) || t.className.indexOf("-leave") >= 0)) {
+              if (!(!t || J(t) || t.className.indexOf("-leave") >= 0)) {
                 var r = e.props.insertExtraNode;
                 e.extraNode = document.createElement("div");
-                var o = G(e),
+                var o = Y(e),
                   i = o.extraNode;
                 i.className = "ant-click-animating-node";
                 var a = e.getAttributeName();
                 t.setAttribute(a, "true"),
-                  (N = N || document.createElement("style")),
+                  (R = R || document.createElement("style")),
                   n &&
                     "#ffffff" !== n &&
                     "rgb(255, 255, 255)" !== n &&
-                    J(n) &&
+                    ee(n) &&
                     !/rgba\(\d*, \d*, \d*, 0\)/.test(n) &&
                     "transparent" !== n &&
-                    (e.csp && e.csp.nonce && (N.nonce = e.csp.nonce),
+                    (e.csp && e.csp.nonce && (R.nonce = e.csp.nonce),
                     (i.style.borderColor = n),
-                    (N.innerHTML = "\n      [ant-click-animating-without-extra-node='true']::after, .ant-click-animating-node {\n        --antd-wave-shadow-color: ".concat(
+                    (R.innerHTML = "\n      [ant-click-animating-without-extra-node='true']::after, .ant-click-animating-node {\n        --antd-wave-shadow-color: ".concat(
                       n,
                       ";\n      }"
                     )),
-                    document.body.contains(N) || document.body.appendChild(N)),
+                    document.body.contains(R) || document.body.appendChild(R)),
                   r && t.appendChild(i),
-                  z["a"].addStartEventListener(t, e.onTransitionStart),
-                  z["a"].addEndEventListener(t, e.onTransitionEnd);
+                  U["a"].addStartEventListener(t, e.onTransitionStart),
+                  U["a"].addEndEventListener(t, e.onTransitionEnd);
               }
             }),
             (e.onTransitionStart = function (t) {
               if (!e.destroyed) {
-                var n = Object(F["findDOMNode"])(G(e));
+                var n = Object(z["findDOMNode"])(Y(e));
                 t && t.target === n && !e.animationStart && e.resetEffect(n);
               }
             }),
@@ -1506,7 +1507,7 @@
                 !(t.className.indexOf("disabled") >= 0)
               ) {
                 var n = function (n) {
-                  if ("INPUT" !== n.target.tagName && !Z(n.target)) {
+                  if ("INPUT" !== n.target.tagName && !J(n.target)) {
                     e.resetEffect(t);
                     var r =
                       getComputedStyle(t).getPropertyValue(
@@ -1517,9 +1518,9 @@
                     (e.clickWaveTimeoutId = window.setTimeout(function () {
                       return e.onClick(t, r);
                     }, 0)),
-                      U["a"].cancel(e.animationStartId),
+                      B["a"].cancel(e.animationStartId),
                       (e.animationStart = !0),
-                      (e.animationStartId = Object(U["a"])(function () {
+                      (e.animationStartId = Object(B["a"])(function () {
                         e.animationStart = !1;
                       }, 10));
                   }
@@ -1543,11 +1544,11 @@
           );
         }
         return (
-          W(n, [
+          K(n, [
             {
               key: "componentDidMount",
               value: function () {
-                var e = Object(F["findDOMNode"])(this);
+                var e = Object(z["findDOMNode"])(this);
                 e &&
                   1 === e.nodeType &&
                   (this.instance = this.bindAnimationEvent(e));
@@ -1578,32 +1579,32 @@
                   var t = this.props.insertExtraNode,
                     n = this.getAttributeName();
                   e.setAttribute(n, "false"),
-                    N && (N.innerHTML = ""),
+                    R && (R.innerHTML = ""),
                     t &&
                       this.extraNode &&
                       e.contains(this.extraNode) &&
                       e.removeChild(this.extraNode),
-                    z["a"].removeStartEventListener(e, this.onTransitionStart),
-                    z["a"].removeEndEventListener(e, this.onTransitionEnd);
+                    U["a"].removeStartEventListener(e, this.onTransitionStart),
+                    U["a"].removeEndEventListener(e, this.onTransitionEnd);
                 }
               },
             },
             {
               key: "render",
               value: function () {
-                return r["createElement"](g["a"], null, this.renderWave);
+                return r["createElement"](b["a"], null, this.renderWave);
               },
             },
           ]),
           n
         );
       })(r["Component"]),
-      te = n("CWQg"),
-      ne = r["createContext"](void 0),
-      re = ne;
-    function oe() {
+      ne = n("CWQg"),
+      re = r["createContext"](void 0),
+      oe = re;
+    function ie() {
       return (
-        (oe =
+        (ie =
           Object.assign ||
           function (e) {
             for (var t = 1; t < arguments.length; t++) {
@@ -1613,10 +1614,10 @@
             }
             return e;
           }),
-        oe.apply(this, arguments)
+        ie.apply(this, arguments)
       );
     }
-    function ie(e, t, n) {
+    function ae(e, t, n) {
       return (
         t in e
           ? Object.defineProperty(e, t, {
@@ -1629,11 +1630,11 @@
         e
       );
     }
-    function ae(e, t) {
+    function ue(e, t) {
       if (!(e instanceof t))
         throw new TypeError("Cannot call a class as a function");
     }
-    function ue(e, t) {
+    function ce(e, t) {
       for (var n = 0; n < t.length; n++) {
         var r = t[n];
         (r.enumerable = r.enumerable || !1),
@@ -1642,31 +1643,31 @@
           Object.defineProperty(e, r.key, r);
       }
     }
-    function ce(e, t, n) {
-      return t && ue(e.prototype, t), n && ue(e, n), e;
+    function le(e, t, n) {
+      return t && ce(e.prototype, t), n && ce(e, n), e;
     }
-    function le(e) {
+    function se(e) {
       return function () {
         var t,
-          n = de(e);
-        if (pe()) {
-          var r = de(this).constructor;
+          n = he(e);
+        if (de()) {
+          var r = he(this).constructor;
           t = Reflect.construct(n, arguments, r);
         } else t = n.apply(this, arguments);
-        return se(this, t);
+        return fe(this, t);
       };
     }
-    function se(e, t) {
-      return !t || ("object" !== ye(t) && "function" !== typeof t) ? fe(e) : t;
+    function fe(e, t) {
+      return !t || ("object" !== ve(t) && "function" !== typeof t) ? pe(e) : t;
     }
-    function fe(e) {
+    function pe(e) {
       if (void 0 === e)
         throw new ReferenceError(
           "this hasn't been initialised - super() hasn't been called"
         );
       return e;
     }
-    function pe() {
+    function de() {
       if ("undefined" === typeof Reflect || !Reflect.construct) return !1;
       if (Reflect.construct.sham) return !1;
       if ("function" === typeof Proxy) return !0;
@@ -1681,17 +1682,17 @@
         return !1;
       }
     }
-    function de(e) {
+    function he(e) {
       return (
-        (de = Object.setPrototypeOf
+        (he = Object.setPrototypeOf
           ? Object.getPrototypeOf
           : function (e) {
               return e.__proto__ || Object.getPrototypeOf(e);
             }),
-        de(e)
+        he(e)
       );
     }
-    function he(e, t) {
+    function me(e, t) {
       if ("function" !== typeof t && null !== t)
         throw new TypeError(
           "Super expression must either be null or a function"
@@ -1699,21 +1700,21 @@
       (e.prototype = Object.create(t && t.prototype, {
         constructor: { value: e, writable: !0, configurable: !0 },
       })),
-        t && me(e, t);
+        t && ye(e, t);
     }
-    function me(e, t) {
+    function ye(e, t) {
       return (
-        (me =
+        (ye =
           Object.setPrototypeOf ||
           function (e, t) {
             return (e.__proto__ = t), e;
           }),
-        me(e, t)
+        ye(e, t)
       );
     }
-    function ye(e) {
+    function ve(e) {
       return (
-        (ye =
+        (ve =
           "function" === typeof Symbol && "symbol" === typeof Symbol.iterator
             ? function (e) {
                 return typeof e;
@@ -1726,10 +1727,10 @@
                   ? "symbol"
                   : typeof e;
               }),
-        ye(e)
+        ve(e)
       );
     }
-    var ve = function (e, t) {
+    var ge = function (e, t) {
         var n = {};
         for (var r in e)
           Object.prototype.hasOwnProperty.call(e, r) &&
@@ -1744,31 +1745,31 @@
         }
         return n;
       },
-      ge = /^[\u4e00-\u9fa5]{2}$/,
-      be = ge.test.bind(ge);
-    function _e(e) {
+      be = /^[\u4e00-\u9fa5]{2}$/,
+      _e = be.test.bind(be);
+    function we(e) {
       return "string" === typeof e;
     }
-    function we(e, t) {
+    function Oe(e, t) {
       if (null != e) {
         var n = t ? " " : "";
         return "string" !== typeof e &&
           "number" !== typeof e &&
-          _e(e.type) &&
-          be(e.props.children)
+          we(e.type) &&
+          _e(e.props.children)
           ? r["cloneElement"](e, {}, e.props.children.split("").join(n))
           : "string" === typeof e
-          ? (be(e) && (e = e.split("").join(n)),
+          ? (_e(e) && (e = e.split("").join(n)),
             r["createElement"]("span", null, e))
           : e;
       }
     }
-    function Oe(e, t) {
+    function Ee(e, t) {
       var n = !1,
         o = [];
       return (
         r["Children"].forEach(e, function (e) {
-          var t = ye(e),
+          var t = ve(e),
             r = "string" === t || "number" === t;
           if (n && r) {
             var i = o.length - 1,
@@ -1778,20 +1779,20 @@
           n = r;
         }),
         r["Children"].map(o, function (e) {
-          return we(e, t);
+          return Oe(e, t);
         })
       );
     }
-    Object(te["a"])("default", "primary", "ghost", "dashed", "danger", "link"),
-      Object(te["a"])("circle", "circle-outline", "round"),
-      Object(te["a"])("submit", "button", "reset");
-    var Ee = (function (e) {
-      he(n, e);
-      var t = le(n);
+    Object(ne["a"])("default", "primary", "ghost", "dashed", "danger", "link"),
+      Object(ne["a"])("circle", "circle-outline", "round"),
+      Object(ne["a"])("submit", "button", "reset");
+    var xe = (function (e) {
+      me(n, e);
+      var t = se(n);
       function n(e) {
         var r;
         return (
-          ae(this, n),
+          ue(this, n),
           (r = t.call(this, e)),
           (r.saveButtonRef = function (e) {
             r.buttonNode = e;
@@ -1806,7 +1807,7 @@
         );
       }
       return (
-        ce(n, [
+        le(n, [
           {
             key: "componentDidMount",
             value: function () {
@@ -1841,7 +1842,7 @@
               var e = this.context.autoInsertSpaceInButton;
               if (this.buttonNode && !1 !== e) {
                 var t = this.buttonNode.textContent;
-                this.isNeedInserted() && be(t)
+                this.isNeedInserted() && _e(t)
                   ? this.state.hasTwoCNChar ||
                     this.setState({ hasTwoCNChar: !0 })
                   : this.state.hasTwoCNChar &&
@@ -1867,11 +1868,11 @@
                 n = t.getPrefixCls,
                 o = t.autoInsertSpaceInButton,
                 i = t.direction;
-              return r["createElement"](re.Consumer, null, function (t) {
+              return r["createElement"](oe.Consumer, null, function (t) {
                 var a,
                   u = e.props,
                   c = u.prefixCls,
-                  s = u.type,
+                  l = u.type,
                   f = u.danger,
                   p = u.shape,
                   d = u.size,
@@ -1880,7 +1881,7 @@
                   y = u.icon,
                   v = u.ghost,
                   g = u.block,
-                  _ = ve(u, [
+                  b = ge(u, [
                     "prefixCls",
                     "type",
                     "danger",
@@ -1895,7 +1896,7 @@
                   w = e.state,
                   O = w.loading,
                   E = w.hasTwoCNChar;
-                Object(b["a"])(
+                Object(_["a"])(
                   !("string" === typeof y && y.length > 2),
                   "Button",
                   "`icon` is using ReactNode instead of string naming in v4. Please check `".concat(
@@ -1917,29 +1918,29 @@
                     break;
                 }
                 var P = O ? "loading" : y,
-                  j = l()(
+                  j = s()(
                     x,
                     h,
                     ((a = {}),
-                    ie(a, "".concat(x, "-").concat(s), s),
-                    ie(a, "".concat(x, "-").concat(p), p),
-                    ie(a, "".concat(x, "-").concat(S), S),
-                    ie(a, "".concat(x, "-icon-only"), !m && 0 !== m && P),
-                    ie(a, "".concat(x, "-loading"), !!O),
-                    ie(a, "".concat(x, "-background-ghost"), v),
-                    ie(a, "".concat(x, "-two-chinese-chars"), E && k),
-                    ie(a, "".concat(x, "-block"), g),
-                    ie(a, "".concat(x, "-dangerous"), !!f),
-                    ie(a, "".concat(x, "-rtl"), "rtl" === i),
+                    ae(a, "".concat(x, "-").concat(l), l),
+                    ae(a, "".concat(x, "-").concat(p), p),
+                    ae(a, "".concat(x, "-").concat(S), S),
+                    ae(a, "".concat(x, "-icon-only"), !m && 0 !== m && P),
+                    ae(a, "".concat(x, "-loading"), !!O),
+                    ae(a, "".concat(x, "-background-ghost"), v),
+                    ae(a, "".concat(x, "-two-chinese-chars"), E && k),
+                    ae(a, "".concat(x, "-block"), g),
+                    ae(a, "".concat(x, "-dangerous"), !!f),
+                    ae(a, "".concat(x, "-rtl"), "rtl" === i),
                     a)
                   ),
-                  C = O ? r["createElement"](I.a, null) : y || null,
-                  T = m || 0 === m ? Oe(m, e.isNeedInserted() && k) : null,
-                  M = Object(L["a"])(_, ["htmlType", "loading"]);
+                  C = O ? r["createElement"](L.a, null) : y || null,
+                  T = m || 0 === m ? Ee(m, e.isNeedInserted() && k) : null,
+                  M = Object(F["a"])(b, ["htmlType", "loading"]);
                 if (void 0 !== M.href)
                   return r["createElement"](
                     "a",
-                    oe({}, M, {
+                    ie({}, M, {
                       className: j,
                       onClick: e.handleClick,
                       ref: e.saveButtonRef,
@@ -1947,12 +1948,12 @@
                     C,
                     T
                   );
-                var A = _,
+                var A = b,
                   N = A.htmlType,
-                  R = ve(A, ["htmlType"]),
+                  R = ge(A, ["htmlType"]),
                   D = r["createElement"](
                     "button",
-                    oe({}, Object(L["a"])(R, ["loading"]), {
+                    ie({}, Object(F["a"])(R, ["loading"]), {
                       type: N,
                       className: j,
                       onClick: e.handleClick,
@@ -1961,7 +1962,7 @@
                     C,
                     T
                   );
-                return "link" === s ? D : r["createElement"](ee, null, D);
+                return "link" === l ? D : r["createElement"](te, null, D);
               });
             },
           },
@@ -1969,18 +1970,18 @@
         n
       );
     })(r["Component"]);
-    (Ee.__ANT_BUTTON = !0),
-      (Ee.contextType = g["b"]),
-      (Ee.defaultProps = {
+    (xe.__ANT_BUTTON = !0),
+      (xe.contextType = b["b"]),
+      (xe.defaultProps = {
         loading: !1,
         ghost: !1,
         block: !1,
         htmlType: "button",
       });
-    var xe = Ee;
-    function ke() {
+    var ke = xe;
+    function Se() {
       return (
-        (ke =
+        (Se =
           Object.assign ||
           function (e) {
             for (var t = 1; t < arguments.length; t++) {
@@ -1990,10 +1991,10 @@
             }
             return e;
           }),
-        ke.apply(this, arguments)
+        Se.apply(this, arguments)
       );
     }
-    function Se(e, t, n) {
+    function Pe(e, t, n) {
       return (
         t in e
           ? Object.defineProperty(e, t, {
@@ -2006,7 +2007,7 @@
         e
       );
     }
-    var Pe = function (e, t) {
+    var je = function (e, t) {
         var n = {};
         for (var r in e)
           Object.prototype.hasOwnProperty.call(e, r) &&
@@ -2021,15 +2022,15 @@
         }
         return n;
       },
-      je = function (e) {
-        return r["createElement"](g["a"], null, function (t) {
+      Ce = function (e) {
+        return r["createElement"](b["a"], null, function (t) {
           var n,
             o = t.getPrefixCls,
             i = t.direction,
             a = e.prefixCls,
             u = e.size,
             c = e.className,
-            s = Pe(e, ["prefixCls", "size", "className"]),
+            l = je(e, ["prefixCls", "size", "className"]),
             f = o("btn-group", a),
             p = "";
           switch (u) {
@@ -2042,22 +2043,22 @@
             default:
               break;
           }
-          var d = l()(
+          var d = s()(
             f,
             ((n = {}),
-            Se(n, "".concat(f, "-").concat(p), p),
-            Se(n, "".concat(f, "-rtl"), "rtl" === i),
+            Pe(n, "".concat(f, "-").concat(p), p),
+            Pe(n, "".concat(f, "-rtl"), "rtl" === i),
             n),
             c
           );
-          return r["createElement"]("div", ke({}, s, { className: d }));
+          return r["createElement"]("div", Se({}, l, { className: d }));
         });
       },
-      Ce = je;
-    xe.Group = Ce;
-    var Te = xe,
-      Me = n("9kvl"),
-      Ae = (e) => {
+      Te = Ce;
+    ke.Group = Te;
+    var Me = ke,
+      Ae = n("9kvl"),
+      Ne = (e) => {
         var t = e.type,
           n = {
             403: {
@@ -2077,7 +2078,7 @@
             },
           },
           r = () => {
-            Me["c"].replace("/home");
+            Ae["c"].replace("/home");
           };
         return o.a.createElement(
           "main",
@@ -2089,31 +2090,32 @@
               justifyContent: "center",
             },
           },
-          o.a.createElement(R, {
+          o.a.createElement(D, {
             status: t,
             title: n[t].title,
             subTitle: n[t].subtitle,
             extra: o.a.createElement(
-              Te,
+              Me,
               { type: "primary", onClick: r },
               "\u8fd4\u56de\u9996\u9875"
             ),
           })
         );
       },
-      Ne = Ae;
+      Re = Ne;
     Object(i["a"])();
     t["default"] = () => {
+      Object(a["b"])();
       var e = Object(i["d"])();
       switch (e) {
         case "children":
-          return Object(i["b"])(), o.a.createElement(u["default"], null);
+          return Object(i["b"])(), o.a.createElement(c["default"], null);
         case "brother":
-          return o.a.createElement(a["default"], null);
+          return o.a.createElement(u["default"], null);
         case "403":
-          return o.a.createElement(Ne, { type: "403" });
+          return o.a.createElement(Re, { type: "403" });
         case void 0:
-          return o.a.createElement(Ne, { type: "404" });
+          return o.a.createElement(Re, { type: "404" });
       }
     };
   },
@@ -10796,6 +10798,58 @@
     var b = a.grey;
     t.grey = b;
   },
+  HiTA: function (e, t, n) {
+    "use strict";
+    n.d(t, "a", function () {
+      return o;
+    }),
+      n.d(t, "b", function () {
+        return c;
+      });
+    var r = n("KPPC"),
+      o = {
+        _data: [],
+        _all: () => Object(r["a"])(),
+        _banned: () => Object(r["c"])(o._data, o._all()),
+        _nodes: [],
+        set: (e) => (o._data = e),
+        get: () => o._data,
+      },
+      i = () => {
+        var e = localStorage.getItem("profile"),
+          t = e ? JSON.parse(e) : null;
+        t && t.privileges && o.set(t.privileges);
+      },
+      a = () => {
+        o._banned().forEach((e) => {
+          var t = document.querySelectorAll("#".concat(e));
+          t.forEach((e) => {
+            var t,
+              n = { node: e, parentNode: e.parentNode };
+            o._nodes.includes(n) || o._nodes.push(n),
+              null === (t = e.parentNode) || void 0 === t || t.removeChild(e);
+          });
+        });
+      },
+      u = () => {
+        o._nodes.forEach((e) => {
+          e.parentNode.appendChild(e.node);
+        });
+      },
+      c = () => {
+        i(), u();
+        var e = new MutationObserver(a),
+          t = document.querySelector("#root-master");
+        t &&
+          e.observe(t, {
+            childList: !0,
+            subtree: !0,
+            characterData: !0,
+            attributes: !0,
+            attributeFilter: ["id"],
+          });
+      };
+  },
   Hvzi: function (e, t) {
     function n(e) {
       var t = this.has(e) && delete this.__data__[e];
@@ -12485,6 +12539,47 @@
       (this.__data__ = []), (this.size = 0);
     }
     e.exports = n;
+  },
+  KPPC: function (e, t, n) {
+    "use strict";
+    n.d(t, "c", function () {
+      return o;
+    }),
+      n.d(t, "b", function () {
+        return i;
+      }),
+      n.d(t, "a", function () {
+        return a;
+      });
+    var r = n("vSPo"),
+      o = (e, t) =>
+        e.concat(t).filter((e, t, n) => n.indexOf(e) === n.lastIndexOf(e)),
+      i = () => {
+        var e = (t) => {
+            t.forEach((t) => {
+              (t.title = null !== t.privilegeId ? t.privilegeId : t.title),
+                (t.key =
+                  null !== t.privilegeId
+                    ? t.privilegeId
+                    : Math.random().toString()),
+                (t.checkable = null !== t.privilegeId),
+                t.routes &&
+                  ((t.children = t.routes), delete t.routes, e(t.children));
+            });
+          },
+          t = JSON.parse(JSON.stringify(r["f"]));
+        return e(t), t;
+      },
+      a = () => {
+        var e = [],
+          t = (n) => {
+            n.forEach((n) => {
+              null !== n.privilegeId && e.push(n.privilegeId),
+                n.routes && t(n.routes);
+            });
+          };
+        return t(r["f"]), e;
+      };
   },
   KQxl: function (e, t, n) {
     "use strict";
@@ -20491,58 +20586,59 @@
     var Dc = Tu,
       Ic = n("55Ip"),
       Lc = n("vSPo"),
-      Fc = (n("AOa7"), n("KAsB"), n("+L6B"), n("HQEm")),
-      zc = n.n(Fc),
-      Uc = { adjustX: 1, adjustY: 1 },
-      Bc = [0, 0],
-      Hc = {
+      Fc = n("HiTA"),
+      zc = (n("AOa7"), n("KAsB"), n("+L6B"), n("HQEm")),
+      Uc = n.n(zc),
+      Bc = { adjustX: 1, adjustY: 1 },
+      Hc = [0, 0],
+      Vc = {
         topLeft: {
           points: ["bl", "tl"],
-          overflow: Uc,
+          overflow: Bc,
           offset: [0, -4],
-          targetOffset: Bc,
+          targetOffset: Hc,
         },
         topCenter: {
           points: ["bc", "tc"],
-          overflow: Uc,
+          overflow: Bc,
           offset: [0, -4],
-          targetOffset: Bc,
+          targetOffset: Hc,
         },
         topRight: {
           points: ["br", "tr"],
-          overflow: Uc,
+          overflow: Bc,
           offset: [0, -4],
-          targetOffset: Bc,
+          targetOffset: Hc,
         },
         bottomLeft: {
           points: ["tl", "bl"],
-          overflow: Uc,
+          overflow: Bc,
           offset: [0, 4],
-          targetOffset: Bc,
+          targetOffset: Hc,
         },
         bottomCenter: {
           points: ["tc", "bc"],
-          overflow: Uc,
+          overflow: Bc,
           offset: [0, 4],
-          targetOffset: Bc,
+          targetOffset: Hc,
         },
         bottomRight: {
           points: ["tr", "br"],
-          overflow: Uc,
+          overflow: Bc,
           offset: [0, 4],
-          targetOffset: Bc,
+          targetOffset: Hc,
         },
       },
-      Vc = Hc;
-    function Wc(e, t) {
-      return Gc(e) || qc(e, t) || Kc();
+      Wc = Vc;
+    function Kc(e, t) {
+      return Yc(e) || Gc(e, t) || qc();
     }
-    function Kc() {
+    function qc() {
       throw new TypeError(
         "Invalid attempt to destructure non-iterable instance"
       );
     }
-    function qc(e, t) {
+    function Gc(e, t) {
       if (
         Symbol.iterator in Object(e) ||
         "[object Arguments]" === Object.prototype.toString.call(e)
@@ -20570,14 +20666,14 @@
         return n;
       }
     }
-    function Gc(e) {
+    function Yc(e) {
       if (Array.isArray(e)) return e;
     }
-    function Yc(e, t) {
+    function Qc(e, t) {
       if (null == e) return {};
       var n,
         r,
-        o = Qc(e, t);
+        o = $c(e, t);
       if (Object.getOwnPropertySymbols) {
         var i = Object.getOwnPropertySymbols(e);
         for (r = 0; r < i.length; r++)
@@ -20588,7 +20684,7 @@
       }
       return o;
     }
-    function Qc(e, t) {
+    function $c(e, t) {
       if (null == e) return {};
       var n,
         r,
@@ -20598,7 +20694,7 @@
         (n = i[r]), t.indexOf(n) >= 0 || (o[n] = e[n]);
       return o;
     }
-    function $c(e, t) {
+    function Xc(e, t) {
       var n = e.prefixCls,
         o = void 0 === n ? "rc-dropdown" : n,
         i = e.transitionName,
@@ -20607,7 +20703,7 @@
         c = e.placement,
         l = void 0 === c ? "bottomLeft" : c,
         s = e.placements,
-        f = void 0 === s ? Vc : s,
+        f = void 0 === s ? Wc : s,
         d = e.getPopupContainer,
         h = e.showAction,
         m = e.hideAction,
@@ -20616,7 +20712,7 @@
         g = e.visible,
         b = e.trigger,
         _ = void 0 === b ? ["hover"] : b,
-        w = Yc(e, [
+        w = Qc(e, [
           "prefixCls",
           "transitionName",
           "animation",
@@ -20632,7 +20728,7 @@
           "trigger",
         ]),
         O = r["useState"](),
-        E = Wc(O, 2),
+        E = Kc(O, 2),
         x = E[0],
         k = E[1],
         S = "visible" in e ? g : x,
@@ -20709,12 +20805,12 @@
         )
       );
     }
-    var Xc = r["forwardRef"]($c),
-      Zc = Xc,
-      Jc = n("CWQg");
-    function el(e) {
+    var Zc = r["forwardRef"](Xc),
+      Jc = Zc,
+      el = n("CWQg");
+    function tl(e) {
       return (
-        (el =
+        (tl =
           "function" === typeof Symbol && "symbol" === typeof Symbol.iterator
             ? function (e) {
                 return typeof e;
@@ -20727,12 +20823,12 @@
                   ? "symbol"
                   : typeof e;
               }),
-        el(e)
+        tl(e)
       );
     }
-    function tl() {
+    function nl() {
       return (
-        (tl =
+        (nl =
           Object.assign ||
           function (e) {
             for (var t = 1; t < arguments.length; t++) {
@@ -20742,10 +20838,10 @@
             }
             return e;
           }),
-        tl.apply(this, arguments)
+        nl.apply(this, arguments)
       );
     }
-    function nl(e, t, n) {
+    function rl(e, t, n) {
       return (
         t in e
           ? Object.defineProperty(e, t, {
@@ -20758,11 +20854,11 @@
         e
       );
     }
-    function rl(e, t) {
+    function ol(e, t) {
       if (!(e instanceof t))
         throw new TypeError("Cannot call a class as a function");
     }
-    function ol(e, t) {
+    function il(e, t) {
       for (var n = 0; n < t.length; n++) {
         var r = t[n];
         (r.enumerable = r.enumerable || !1),
@@ -20771,31 +20867,31 @@
           Object.defineProperty(e, r.key, r);
       }
     }
-    function il(e, t, n) {
-      return t && ol(e.prototype, t), n && ol(e, n), e;
+    function al(e, t, n) {
+      return t && il(e.prototype, t), n && il(e, n), e;
     }
-    function al(e) {
+    function ul(e) {
       return function () {
         var t,
-          n = sl(e);
-        if (ll()) {
-          var r = sl(this).constructor;
+          n = fl(e);
+        if (sl()) {
+          var r = fl(this).constructor;
           t = Reflect.construct(n, arguments, r);
         } else t = n.apply(this, arguments);
-        return ul(this, t);
+        return cl(this, t);
       };
     }
-    function ul(e, t) {
-      return !t || ("object" !== el(t) && "function" !== typeof t) ? cl(e) : t;
+    function cl(e, t) {
+      return !t || ("object" !== tl(t) && "function" !== typeof t) ? ll(e) : t;
     }
-    function cl(e) {
+    function ll(e) {
       if (void 0 === e)
         throw new ReferenceError(
           "this hasn't been initialised - super() hasn't been called"
         );
       return e;
     }
-    function ll() {
+    function sl() {
       if ("undefined" === typeof Reflect || !Reflect.construct) return !1;
       if (Reflect.construct.sham) return !1;
       if ("function" === typeof Proxy) return !0;
@@ -20810,17 +20906,17 @@
         return !1;
       }
     }
-    function sl(e) {
+    function fl(e) {
       return (
-        (sl = Object.setPrototypeOf
+        (fl = Object.setPrototypeOf
           ? Object.getPrototypeOf
           : function (e) {
               return e.__proto__ || Object.getPrototypeOf(e);
             }),
-        sl(e)
+        fl(e)
       );
     }
-    function fl(e, t) {
+    function pl(e, t) {
       if ("function" !== typeof t && null !== t)
         throw new TypeError(
           "Super expression must either be null or a function"
@@ -20828,19 +20924,19 @@
       (e.prototype = Object.create(t && t.prototype, {
         constructor: { value: e, writable: !0, configurable: !0 },
       })),
-        t && pl(e, t);
+        t && dl(e, t);
     }
-    function pl(e, t) {
+    function dl(e, t) {
       return (
-        (pl =
+        (dl =
           Object.setPrototypeOf ||
           function (e, t) {
             return (e.__proto__ = t), e;
           }),
-        pl(e, t)
+        dl(e, t)
       );
     }
-    Object(Jc["a"])(
+    Object(el["a"])(
       "topLeft",
       "topCenter",
       "topRight",
@@ -20848,13 +20944,13 @@
       "bottomCenter",
       "bottomRight"
     );
-    var dl = (function (e) {
-      fl(n, e);
-      var t = al(n);
+    var hl = (function (e) {
+      pl(n, e);
+      var t = ul(n);
       function n() {
         var e;
         return (
-          rl(this, n),
+          ol(this, n),
           (e = t.apply(this, arguments)),
           (e.renderOverlay = function (t) {
             var n,
@@ -20910,17 +21006,17 @@
                 className: p()(
                   y.props.className,
                   "".concat(m, "-trigger"),
-                  nl({}, "".concat(m, "-rtl"), "rtl" === a)
+                  rl({}, "".concat(m, "-rtl"), "rtl" === a)
                 ),
                 disabled: f,
               }),
-              g = p()(h, nl({}, "".concat(m, "-rtl"), "rtl" === a)),
+              g = p()(h, rl({}, "".concat(m, "-rtl"), "rtl" === a)),
               b = f ? [] : s;
             return (
               b && -1 !== b.indexOf("contextMenu") && (n = !0),
               r["createElement"](
-                Zc,
-                tl({ alignPoint: n }, e.props, {
+                Jc,
+                nl({ alignPoint: n }, e.props, {
                   overlayClassName: g,
                   prefixCls: m,
                   getPopupContainer: d || o,
@@ -20939,7 +21035,7 @@
         );
       }
       return (
-        il(n, [
+        al(n, [
           {
             key: "getTransitionName",
             value: function () {
@@ -20979,9 +21075,9 @@
         n
       );
     })(r["Component"]);
-    function hl(e) {
+    function ml(e) {
       return (
-        (hl =
+        (ml =
           "function" === typeof Symbol && "symbol" === typeof Symbol.iterator
             ? function (e) {
                 return typeof e;
@@ -20994,12 +21090,12 @@
                   ? "symbol"
                   : typeof e;
               }),
-        hl(e)
+        ml(e)
       );
     }
-    function ml() {
+    function yl() {
       return (
-        (ml =
+        (yl =
           Object.assign ||
           function (e) {
             for (var t = 1; t < arguments.length; t++) {
@@ -21009,14 +21105,14 @@
             }
             return e;
           }),
-        ml.apply(this, arguments)
+        yl.apply(this, arguments)
       );
     }
-    function yl(e, t) {
+    function vl(e, t) {
       if (!(e instanceof t))
         throw new TypeError("Cannot call a class as a function");
     }
-    function vl(e, t) {
+    function gl(e, t) {
       for (var n = 0; n < t.length; n++) {
         var r = t[n];
         (r.enumerable = r.enumerable || !1),
@@ -21025,31 +21121,31 @@
           Object.defineProperty(e, r.key, r);
       }
     }
-    function gl(e, t, n) {
-      return t && vl(e.prototype, t), n && vl(e, n), e;
+    function bl(e, t, n) {
+      return t && gl(e.prototype, t), n && gl(e, n), e;
     }
-    function bl(e) {
+    function _l(e) {
       return function () {
         var t,
-          n = El(e);
-        if (Ol()) {
-          var r = El(this).constructor;
+          n = xl(e);
+        if (El()) {
+          var r = xl(this).constructor;
           t = Reflect.construct(n, arguments, r);
         } else t = n.apply(this, arguments);
-        return _l(this, t);
+        return wl(this, t);
       };
     }
-    function _l(e, t) {
-      return !t || ("object" !== hl(t) && "function" !== typeof t) ? wl(e) : t;
+    function wl(e, t) {
+      return !t || ("object" !== ml(t) && "function" !== typeof t) ? Ol(e) : t;
     }
-    function wl(e) {
+    function Ol(e) {
       if (void 0 === e)
         throw new ReferenceError(
           "this hasn't been initialised - super() hasn't been called"
         );
       return e;
     }
-    function Ol() {
+    function El() {
       if ("undefined" === typeof Reflect || !Reflect.construct) return !1;
       if (Reflect.construct.sham) return !1;
       if ("function" === typeof Proxy) return !0;
@@ -21064,17 +21160,17 @@
         return !1;
       }
     }
-    function El(e) {
+    function xl(e) {
       return (
-        (El = Object.setPrototypeOf
+        (xl = Object.setPrototypeOf
           ? Object.getPrototypeOf
           : function (e) {
               return e.__proto__ || Object.getPrototypeOf(e);
             }),
-        El(e)
+        xl(e)
       );
     }
-    function xl(e, t) {
+    function kl(e, t) {
       if ("function" !== typeof t && null !== t)
         throw new TypeError(
           "Super expression must either be null or a function"
@@ -21082,20 +21178,20 @@
       (e.prototype = Object.create(t && t.prototype, {
         constructor: { value: e, writable: !0, configurable: !0 },
       })),
-        t && kl(e, t);
+        t && Sl(e, t);
     }
-    function kl(e, t) {
+    function Sl(e, t) {
       return (
-        (kl =
+        (Sl =
           Object.setPrototypeOf ||
           function (e, t) {
             return (e.__proto__ = t), e;
           }),
-        kl(e, t)
+        Sl(e, t)
       );
     }
-    dl.defaultProps = { mouseEnterDelay: 0.15, mouseLeaveDelay: 0.1 };
-    var Sl = function (e, t) {
+    hl.defaultProps = { mouseEnterDelay: 0.15, mouseLeaveDelay: 0.1 };
+    var Pl = function (e, t) {
         var n = {};
         for (var r in e)
           Object.prototype.hasOwnProperty.call(e, r) &&
@@ -21110,13 +21206,13 @@
         }
         return n;
       },
-      Pl = (function (e) {
-        xl(n, e);
-        var t = bl(n);
+      jl = (function (e) {
+        kl(n, e);
+        var t = _l(n);
         function n() {
           var e;
           return (
-            yl(this, n),
+            vl(this, n),
             (e = t.apply(this, arguments)),
             (e.renderBreadcrumbItem = function (t) {
               var n,
@@ -21125,14 +21221,14 @@
                 a = i.prefixCls,
                 u = i.separator,
                 c = i.children,
-                l = Sl(i, ["prefixCls", "separator", "children"]),
+                l = Pl(i, ["prefixCls", "separator", "children"]),
                 s = o("breadcrumb", a);
               return (
                 (n =
                   "href" in e.props
                     ? r["createElement"](
                         "a",
-                        ml(
+                        yl(
                           { className: "".concat(s, "-link") },
                           Object(Qi["a"])(l, ["overlay"])
                         ),
@@ -21140,7 +21236,7 @@
                       )
                     : r["createElement"](
                         "span",
-                        ml(
+                        yl(
                           { className: "".concat(s, "-link") },
                           Object(Qi["a"])(l, ["overlay"])
                         ),
@@ -21167,13 +21263,13 @@
               var o = e.props.overlay;
               return o
                 ? r["createElement"](
-                    dl,
+                    hl,
                     { overlay: o, placement: "bottomCenter" },
                     r["createElement"](
                       "span",
                       { className: "".concat(n, "-overlay-link") },
                       t,
-                      r["createElement"](zc.a, null)
+                      r["createElement"](Uc.a, null)
                     )
                   )
                 : t;
@@ -21182,7 +21278,7 @@
           );
         }
         return (
-          gl(n, [
+          bl(n, [
             {
               key: "render",
               value: function () {
@@ -21197,9 +21293,9 @@
           n
         );
       })(r["Component"]);
-    function jl(e) {
+    function Cl(e) {
       return (
-        (jl =
+        (Cl =
           "function" === typeof Symbol && "symbol" === typeof Symbol.iterator
             ? function (e) {
                 return typeof e;
@@ -21212,12 +21308,12 @@
                   ? "symbol"
                   : typeof e;
               }),
-        jl(e)
+        Cl(e)
       );
     }
-    function Cl() {
+    function Tl() {
       return (
-        (Cl =
+        (Tl =
           Object.assign ||
           function (e) {
             for (var t = 1; t < arguments.length; t++) {
@@ -21227,10 +21323,10 @@
             }
             return e;
           }),
-        Cl.apply(this, arguments)
+        Tl.apply(this, arguments)
       );
     }
-    function Tl(e, t, n) {
+    function Ml(e, t, n) {
       return (
         t in e
           ? Object.defineProperty(e, t, {
@@ -21243,17 +21339,17 @@
         e
       );
     }
-    function Ml(e) {
-      return Dl(e) || Rl(e) || Nl(e) || Al();
+    function Al(e) {
+      return Il(e) || Dl(e) || Rl(e) || Nl();
     }
-    function Al() {
+    function Nl() {
       throw new TypeError(
         "Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."
       );
     }
-    function Nl(e, t) {
+    function Rl(e, t) {
       if (e) {
-        if ("string" === typeof e) return Il(e, t);
+        if ("string" === typeof e) return Ll(e, t);
         var n = Object.prototype.toString.call(e).slice(8, -1);
         return (
           "Object" === n && e.constructor && (n = e.constructor.name),
@@ -21261,28 +21357,28 @@
             ? Array.from(n)
             : "Arguments" === n ||
               /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)
-            ? Il(e, t)
+            ? Ll(e, t)
             : void 0
         );
       }
     }
-    function Rl(e) {
+    function Dl(e) {
       if ("undefined" !== typeof Symbol && Symbol.iterator in Object(e))
         return Array.from(e);
     }
-    function Dl(e) {
-      if (Array.isArray(e)) return Il(e);
+    function Il(e) {
+      if (Array.isArray(e)) return Ll(e);
     }
-    function Il(e, t) {
+    function Ll(e, t) {
       (null == t || t > e.length) && (t = e.length);
       for (var n = 0, r = new Array(t); n < t; n++) r[n] = e[n];
       return r;
     }
-    function Ll(e, t) {
+    function Fl(e, t) {
       if (!(e instanceof t))
         throw new TypeError("Cannot call a class as a function");
     }
-    function Fl(e, t) {
+    function zl(e, t) {
       for (var n = 0; n < t.length; n++) {
         var r = t[n];
         (r.enumerable = r.enumerable || !1),
@@ -21291,31 +21387,31 @@
           Object.defineProperty(e, r.key, r);
       }
     }
-    function zl(e, t, n) {
-      return t && Fl(e.prototype, t), n && Fl(e, n), e;
+    function Ul(e, t, n) {
+      return t && zl(e.prototype, t), n && zl(e, n), e;
     }
-    function Ul(e) {
+    function Bl(e) {
       return function () {
         var t,
-          n = Wl(e);
-        if (Vl()) {
-          var r = Wl(this).constructor;
+          n = Kl(e);
+        if (Wl()) {
+          var r = Kl(this).constructor;
           t = Reflect.construct(n, arguments, r);
         } else t = n.apply(this, arguments);
-        return Bl(this, t);
+        return Hl(this, t);
       };
     }
-    function Bl(e, t) {
-      return !t || ("object" !== jl(t) && "function" !== typeof t) ? Hl(e) : t;
+    function Hl(e, t) {
+      return !t || ("object" !== Cl(t) && "function" !== typeof t) ? Vl(e) : t;
     }
-    function Hl(e) {
+    function Vl(e) {
       if (void 0 === e)
         throw new ReferenceError(
           "this hasn't been initialised - super() hasn't been called"
         );
       return e;
     }
-    function Vl() {
+    function Wl() {
       if ("undefined" === typeof Reflect || !Reflect.construct) return !1;
       if (Reflect.construct.sham) return !1;
       if ("function" === typeof Proxy) return !0;
@@ -21330,17 +21426,17 @@
         return !1;
       }
     }
-    function Wl(e) {
+    function Kl(e) {
       return (
-        (Wl = Object.setPrototypeOf
+        (Kl = Object.setPrototypeOf
           ? Object.getPrototypeOf
           : function (e) {
               return e.__proto__ || Object.getPrototypeOf(e);
             }),
-        Wl(e)
+        Kl(e)
       );
     }
-    function Kl(e, t) {
+    function ql(e, t) {
       if ("function" !== typeof t && null !== t)
         throw new TypeError(
           "Super expression must either be null or a function"
@@ -21348,20 +21444,20 @@
       (e.prototype = Object.create(t && t.prototype, {
         constructor: { value: e, writable: !0, configurable: !0 },
       })),
-        t && ql(e, t);
+        t && Gl(e, t);
     }
-    function ql(e, t) {
+    function Gl(e, t) {
       return (
-        (ql =
+        (Gl =
           Object.setPrototypeOf ||
           function (e, t) {
             return (e.__proto__ = t), e;
           }),
-        ql(e, t)
+        Gl(e, t)
       );
     }
-    (Pl.__ANT_BREADCRUMB_ITEM = !0), (Pl.defaultProps = { separator: "/" });
-    var Gl = function (e, t) {
+    (jl.__ANT_BREADCRUMB_ITEM = !0), (jl.defaultProps = { separator: "/" });
+    var Yl = function (e, t) {
       var n = {};
       for (var r in e)
         Object.prototype.hasOwnProperty.call(e, r) &&
@@ -21376,7 +21472,7 @@
       }
       return n;
     };
-    function Yl(e, t) {
+    function Ql(e, t) {
       if (!e.breadcrumbName) return null;
       var n = Object.keys(t).join("|"),
         r = e.breadcrumbName.replace(
@@ -21387,14 +21483,14 @@
         );
       return r;
     }
-    function Ql(e, t, n, o) {
+    function $l(e, t, n, o) {
       var i = n.indexOf(e) === n.length - 1,
-        a = Yl(e, t);
+        a = Ql(e, t);
       return i
         ? r["createElement"]("span", null, a)
         : r["createElement"]("a", { href: "#/".concat(o.join("/")) }, a);
     }
-    function $l(e) {
+    function Xl(e) {
       return Object(pa["a"])(e).map(function (e) {
         if (r["isValidElement"](e) && e.type === r["Fragment"]) {
           var t = e.props;
@@ -21403,13 +21499,13 @@
         return e;
       });
     }
-    var Xl = (function (e) {
-      Kl(n, e);
-      var t = Ul(n);
+    var Zl = (function (e) {
+      ql(n, e);
+      var t = Bl(n);
       function n() {
         var e;
         return (
-          Ll(this, n),
+          Fl(this, n),
           (e = t.apply(this, arguments)),
           (e.getPath = function (e, t) {
             return (
@@ -21426,7 +21522,7 @@
                   ? arguments[1]
                   : "",
               r = arguments.length > 2 ? arguments[2] : void 0,
-              o = Ml(t),
+              o = Al(t),
               i = e.getPath(n, r);
             return i && o.push(i), o;
           }),
@@ -21437,7 +21533,7 @@
               a = void 0 === i ? {} : i,
               u = t.separator,
               c = t.itemRender,
-              l = void 0 === c ? Ql : c,
+              l = void 0 === c ? $l : c,
               s = [];
             return o.map(function (t) {
               var n,
@@ -21458,7 +21554,7 @@
                     })
                   )),
                 r["createElement"](
-                  Pl,
+                  jl,
                   { overlay: n, separator: u, key: i || t.breadcrumbName },
                   l(t, a, o, s)
                 )
@@ -21476,7 +21572,7 @@
               s = a.className,
               f = a.routes,
               d = a.children,
-              h = Gl(a, [
+              h = Yl(a, [
                 "prefixCls",
                 "separator",
                 "style",
@@ -21488,7 +21584,7 @@
             f && f.length > 0
               ? (n = e.genForRoutes(e.props))
               : d &&
-                (n = r["Children"].map($l(d), function (e, t) {
+                (n = r["Children"].map(Xl(d), function (e, t) {
                   return e
                     ? (Object(dc["a"])(
                         e.type &&
@@ -21500,10 +21596,10 @@
                       r["cloneElement"](e, { separator: c, key: t }))
                     : e;
                 }));
-            var y = p()(s, m, Tl({}, "".concat(m, "-rtl"), "rtl" === i));
+            var y = p()(s, m, Ml({}, "".concat(m, "-rtl"), "rtl" === i));
             return r["createElement"](
               "div",
-              Cl(
+              Tl(
                 { className: y, style: l },
                 Object(Qi["a"])(h, [
                   "itemRender",
@@ -21519,7 +21615,7 @@
         );
       }
       return (
-        zl(n, [
+        Ul(n, [
           {
             key: "render",
             value: function () {
@@ -21530,9 +21626,9 @@
         n
       );
     })(r["Component"]);
-    function Zl(e) {
+    function Jl(e) {
       return (
-        (Zl =
+        (Jl =
           "function" === typeof Symbol && "symbol" === typeof Symbol.iterator
             ? function (e) {
                 return typeof e;
@@ -21545,14 +21641,14 @@
                   ? "symbol"
                   : typeof e;
               }),
-        Zl(e)
+        Jl(e)
       );
     }
-    function Jl(e, t) {
+    function es(e, t) {
       if (!(e instanceof t))
         throw new TypeError("Cannot call a class as a function");
     }
-    function es(e, t) {
+    function ts(e, t) {
       for (var n = 0; n < t.length; n++) {
         var r = t[n];
         (r.enumerable = r.enumerable || !1),
@@ -21561,31 +21657,31 @@
           Object.defineProperty(e, r.key, r);
       }
     }
-    function ts(e, t, n) {
-      return t && es(e.prototype, t), n && es(e, n), e;
+    function ns(e, t, n) {
+      return t && ts(e.prototype, t), n && ts(e, n), e;
     }
-    function ns(e) {
+    function rs(e) {
       return function () {
         var t,
-          n = as(e);
-        if (is()) {
-          var r = as(this).constructor;
+          n = us(e);
+        if (as()) {
+          var r = us(this).constructor;
           t = Reflect.construct(n, arguments, r);
         } else t = n.apply(this, arguments);
-        return rs(this, t);
+        return os(this, t);
       };
     }
-    function rs(e, t) {
-      return !t || ("object" !== Zl(t) && "function" !== typeof t) ? os(e) : t;
+    function os(e, t) {
+      return !t || ("object" !== Jl(t) && "function" !== typeof t) ? is(e) : t;
     }
-    function os(e) {
+    function is(e) {
       if (void 0 === e)
         throw new ReferenceError(
           "this hasn't been initialised - super() hasn't been called"
         );
       return e;
     }
-    function is() {
+    function as() {
       if ("undefined" === typeof Reflect || !Reflect.construct) return !1;
       if (Reflect.construct.sham) return !1;
       if ("function" === typeof Proxy) return !0;
@@ -21600,17 +21696,17 @@
         return !1;
       }
     }
-    function as(e) {
+    function us(e) {
       return (
-        (as = Object.setPrototypeOf
+        (us = Object.setPrototypeOf
           ? Object.getPrototypeOf
           : function (e) {
               return e.__proto__ || Object.getPrototypeOf(e);
             }),
-        as(e)
+        us(e)
       );
     }
-    function us(e, t) {
+    function cs(e, t) {
       if ("function" !== typeof t && null !== t)
         throw new TypeError(
           "Super expression must either be null or a function"
@@ -21618,26 +21714,26 @@
       (e.prototype = Object.create(t && t.prototype, {
         constructor: { value: e, writable: !0, configurable: !0 },
       })),
-        t && cs(e, t);
+        t && ls(e, t);
     }
-    function cs(e, t) {
+    function ls(e, t) {
       return (
-        (cs =
+        (ls =
           Object.setPrototypeOf ||
           function (e, t) {
             return (e.__proto__ = t), e;
           }),
-        cs(e, t)
+        ls(e, t)
       );
     }
-    Xl.defaultProps = { separator: "/" };
-    var ls = (function (e) {
-      us(n, e);
-      var t = ns(n);
+    Zl.defaultProps = { separator: "/" };
+    var ss = (function (e) {
+      cs(n, e);
+      var t = rs(n);
       function n() {
         var e;
         return (
-          Jl(this, n),
+          es(this, n),
           (e = t.apply(this, arguments)),
           (e.renderSeparator = function (t) {
             var n = t.getPrefixCls,
@@ -21653,7 +21749,7 @@
         );
       }
       return (
-        ts(n, [
+        ns(n, [
           {
             key: "render",
             value: function () {
@@ -21664,58 +21760,66 @@
         n
       );
     })(r["Component"]);
-    (ls.__ANT_BREADCRUMB_SEPARATOR = !0), (Xl.Item = Pl), (Xl.Separator = ls);
-    var ss = Xl,
-      fs = () =>
+    (ss.__ANT_BREADCRUMB_SEPARATOR = !0), (Zl.Item = jl), (Zl.Separator = ss);
+    var fs = Zl,
+      ps = () =>
         o.a.createElement(
-          ss,
+          fs,
           null,
           Object(Lc["c"])().map((e) =>
-            o.a.createElement(ss.Item, { key: e }, e)
+            o.a.createElement(fs.Item, { key: e }, e)
           )
         ),
-      ps = fs,
-      ds = () =>
+      ds = ps,
+      hs = () =>
         o.a.createElement(Ic["Link"], { to: "/account/login" }, "\u9000\u51fa"),
-      hs = ds,
-      ms = n("Qb08"),
-      ys = n("RKie"),
-      vs = n.n(ys),
-      gs = Dc.Header,
-      bs = Dc.Content,
-      _s = Dc.Footer,
-      ws = Dc.Sider,
-      Os = Rc.SubMenu,
-      Es = (e) => {
+      ms = hs,
+      ys = n("Qb08"),
+      vs = n("RKie"),
+      gs = n.n(vs),
+      bs = Dc.Header,
+      _s = Dc.Content,
+      ws = Dc.Footer,
+      Os = Dc.Sider,
+      Es = Rc.SubMenu,
+      xs = (e) => {
         var t = (e) =>
-          !1 !== e.sidebar &&
-          o.a.createElement(
-            Rc.Item,
-            { key: e.path, id: e.privilegeId },
-            o.a.createElement(Ic["Link"], { to: e.path }, e.title)
-          );
+            !1 !== e.sidebar && !Fc["a"]._banned().includes(e.privilegeId),
+          n = (e) =>
+            t(e) &&
+            o.a.createElement(
+              Rc.Item,
+              { key: e.path },
+              o.a.createElement(Ic["Link"], { to: e.path }, e.title)
+            );
         return e.map((e) =>
           e.routes
             ? e.routes.every((e) => !1 === e.sidebar)
-              ? t(e)
-              : o.a.createElement(
-                  Os,
-                  { key: e.path, title: e.title, id: e.privilegeId },
-                  Es(e.routes)
+              ? n(e)
+              : e.routes.every(
+                  (e) =>
+                    Fc["a"]._banned().includes(e.privilegeId) ||
+                    !1 === e.sidebar
                 )
-            : t(e)
+              ? null
+              : o.a.createElement(
+                  Es,
+                  { key: e.path, title: e.title },
+                  xs(e.routes)
+                )
+            : n(e)
         );
       };
     t["default"] = () =>
       o.a.createElement(
         Dc,
-        { className: vs.a.layout },
+        { className: gs.a.layout },
         o.a.createElement(
-          ws,
-          { className: vs.a.sider },
+          Os,
+          { className: gs.a.sider },
           o.a.createElement(
             "div",
-            { className: vs.a.logo },
+            { className: gs.a.logo },
             "\u8fd9\u91cc\u662f\u6807\u9898 Logo"
           ),
           o.a.createElement(
@@ -21727,30 +21831,30 @@
               defaultOpenKeys: Lc["e"].generateDefaultKeys().defaultOpenKeys,
               theme: "dark",
             },
-            Es(Lc["e"].routes)
+            xs(Lc["e"].routes)
           )
         ),
         o.a.createElement(
           Dc,
-          { className: vs.a.main },
-          o.a.createElement(
-            gs,
-            { className: vs.a.header },
-            o.a.createElement(ps, null),
-            o.a.createElement(hs, null)
-          ),
+          { className: gs.a.main },
           o.a.createElement(
             bs,
-            { className: vs.a.content },
-            o.a.createElement(
-              "div",
-              { id: "root-children", className: vs.a.children },
-              o.a.createElement(ms["a"], null)
-            )
+            { className: gs.a.header },
+            o.a.createElement(ds, null),
+            o.a.createElement(ms, null)
           ),
           o.a.createElement(
             _s,
-            { className: vs.a.footer },
+            { className: gs.a.content },
+            o.a.createElement(
+              "div",
+              { id: "root-children", className: gs.a.children },
+              o.a.createElement(ys["a"], null)
+            )
+          ),
+          o.a.createElement(
+            ws,
+            { className: gs.a.footer },
             "Copyright \xa9 2020. Powered by \u59dc\u997c\u79d1\u6280"
           )
         )
@@ -22909,10 +23013,10 @@
                 npm_package_dependencies_umi: "3.0.7",
                 AUTOJUMP_ERROR_PATH:
                   "/Users/Vizards/Library/autojump/errors.log",
-                npm_config_viewer: "man",
                 npm_config_only: "",
-                npm_config_commit_hooks: "true",
                 npm_config_browser: "",
+                npm_config_viewer: "man",
+                npm_config_commit_hooks: "true",
                 SPACESHIP_VERSION: "3.11.1",
                 npm_config_also: "",
                 UMI_ENV: "prod",
@@ -22931,11 +23035,11 @@
                 npm_config_globalignorefile: "/usr/local/etc/npmignore",
                 SHELL: "/bin/zsh",
                 TERM: "xterm-256color",
+                npm_config_init_author_url: "",
                 npm_config_shell: "/bin/zsh",
                 npm_config_maxsockets: "50",
-                npm_config_init_author_url: "",
-                npm_config_shrinkwrap: "true",
                 npm_config_parseable: "",
+                npm_config_shrinkwrap: "true",
                 npm_config_metrics_registry: "https://registry.yarnpkg.com/",
                 TMPDIR: "/var/folders/91/dm2gt7fs07s660d1z0x26r_m0000gp/T/",
                 npm_config_timing: "",
@@ -22948,9 +23052,9 @@
                 npm_config_preid: "",
                 npm_config_long: "",
                 npm_config_local_address: "",
-                npm_config_git_tag_version: "true",
                 npm_config_cert: "",
-                TERM_SESSION_ID: "w1t0p2:E10DFDB0-2F8B-49B9-9D56-744F2E08726A",
+                npm_config_git_tag_version: "true",
+                TERM_SESSION_ID: "w0t0p4:49AD8FFE-4404-4F3E-B8DF-EBECE9776F9E",
                 npm_config_noproxy: "",
                 npm_config_fetch_retries: "2",
                 npm_config_home: "https://www.npmjs.org",
@@ -22960,8 +23064,8 @@
                 npm_package_dependencies_lint_staged: "^10.0.9",
                 ZSH: "/Users/Vizards/.oh-my-zsh",
                 npm_config_versions: "",
-                npm_config_message: "%s",
                 npm_config_key: "",
+                npm_config_message: "%s",
                 npm_package_readmeFilename: "README.md",
                 npm_config_python: "/usr/bin/python",
                 npm_package_description: "## Getting Started",
@@ -22969,8 +23073,8 @@
                 NVM_DIR: "/Users/Vizards/.nvm",
                 npm_config_globalconfig: "/usr/local/etc/npmrc",
                 npm_config_prefer_online: "",
-                npm_config_logs_max: "10",
                 npm_config_always_auth: "",
+                npm_config_logs_max: "10",
                 SSH_AUTH_SOCK:
                   "/private/tmp/com.apple.launchd.4dRleHmdv8/Listeners",
                 __CF_USER_TEXT_ENCODING: "0x1F6:0x19:0x34",
@@ -22979,15 +23083,15 @@
                 npm_config_global_style: "",
                 npm_config_cache_lock_retries: "10",
                 npm_package_dependencies_prettier: "^2.0.2",
-                npm_config_update_notifier: "true",
                 npm_config_cafile: "",
+                npm_config_update_notifier: "true",
                 PAGER: "less",
                 npm_config_heading: "npm",
                 npm_config_audit_level: "low",
                 LSCOLORS: "Gxfxcxdxbxegedabagacad",
-                npm_config_searchlimit: "20",
                 npm_config_read_only: "",
                 npm_config_offline: "",
+                npm_config_searchlimit: "20",
                 npm_config_fetch_retry_mintimeout: "10000",
                 npm_package_dependencies__umijs_preset_react: "1.x",
                 npm_config_json: "",
@@ -22995,7 +23099,7 @@
                 npm_config_argv:
                   '{"remain":[],"cooked":["run","build"],"original":["run","build"]}',
                 PATH:
-                  "/Users/Vizards/.nvm/versions/node/v10.16.0/lib/node_modules/npm/node_modules/npm-lifecycle/node-gyp-bin:/Users/Vizards/Code/AEMP/foundation/node_modules/.bin:/var/folders/91/dm2gt7fs07s660d1z0x26r_m0000gp/T/yarn--1585562904976-0.8157899420000285:/Users/Vizards/Code/AEMP/node_modules/.bin:/Users/Vizards/.config/yarn/link/node_modules/.bin:/Users/Vizards/.nvm/versions/node/v10.16.0/libexec/lib/node_modules/npm/bin/node-gyp-bin:/Users/Vizards/.nvm/versions/node/v10.16.0/lib/node_modules/npm/bin/node-gyp-bin:/Users/Vizards/.nvm/versions/node/v10.16.0/bin/node_modules/npm/bin/node-gyp-bin:/Users/Vizards/.nvm/versions/node/v10.16.0/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin",
+                  "/Users/Vizards/.nvm/versions/node/v10.16.0/lib/node_modules/npm/node_modules/npm-lifecycle/node-gyp-bin:/Users/Vizards/Code/AEMP/foundation/node_modules/.bin:/Users/Vizards/.nvm/versions/node/v10.16.0/lib/node_modules/npm/node_modules/npm-lifecycle/node-gyp-bin:/Users/Vizards/Code/AEMP/node_modules/.bin:/var/folders/91/dm2gt7fs07s660d1z0x26r_m0000gp/T/yarn--1585719458019-0.1618087441177678:/Users/Vizards/Code/AEMP/node_modules/.bin:/Users/Vizards/.config/yarn/link/node_modules/.bin:/Users/Vizards/.nvm/versions/node/v10.16.0/libexec/lib/node_modules/npm/bin/node-gyp-bin:/Users/Vizards/.nvm/versions/node/v10.16.0/lib/node_modules/npm/bin/node-gyp-bin:/Users/Vizards/.nvm/versions/node/v10.16.0/bin/node_modules/npm/bin/node-gyp-bin:/Users/Vizards/.nvm/versions/node/v10.16.0/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin",
                 npm_config_allow_same_version: "",
                 npm_config_https_proxy: "",
                 npm_config_engine_strict: "",
@@ -23012,24 +23116,24 @@
                 npm_package_lint_staged___ts__x__0:
                   "prettier --parser=typescript --write",
                 EDITOR: "code",
-                npm_config_save: "true",
                 npm_config_ignore_prepublish: "",
+                npm_config_save: "true",
                 npm_config_editor: "code",
                 npm_config_auth_type: "legacy",
                 npm_package_name: "",
                 LANG: "zh_CN.UTF-8",
-                npm_config_tag: "latest",
                 npm_config_script_shell: "",
+                npm_config_tag: "latest",
                 ITERM_PROFILE: "Default",
-                npm_config_progress: "true",
                 npm_config_global: "",
                 npm_config_before: "",
+                npm_config_progress: "true",
                 npm_config_version_commit_hooks: "true",
                 npm_package_scripts_build: "cross-env UMI_ENV=prod umi build",
                 npm_package_scripts_start: "cross-env UMI_ENV=dev umi dev",
+                npm_config_ham_it_up: "",
                 npm_config_searchstaleness: "900",
                 npm_config_optional: "true",
-                npm_config_ham_it_up: "",
                 XPC_FLAGS: "0x0",
                 npm_config_save_prod: "",
                 npm_config_force: "",
@@ -23048,21 +23152,21 @@
                 npm_config_unicode: "true",
                 COLORFGBG: "15;0",
                 HOME: "/Users/Vizards",
-                SHLVL: "3",
+                SHLVL: "4",
                 npm_config_fetch_retry_maxtimeout: "60000",
                 npm_package_scripts_test: "umi-test",
+                npm_config_ca: "",
                 npm_config_tag_version_prefix: "v",
                 npm_config_sso_type: "oauth",
                 npm_config_scripts_prepend_node_path: "warn-only",
                 npm_config_loglevel: "notice",
-                npm_config_ca: "",
                 npm_config_strict_ssl: "true",
                 npm_config_save_prefix: "^",
                 LC_TERMINAL_VERSION: "3.3.10beta2",
                 npm_config_save_exact: "",
+                npm_config_dev: "",
                 npm_config_group: "20",
                 npm_config_fetch_retry_factor: "10",
-                npm_config_dev: "",
                 npm_config_version_git_message: "v%s",
                 npm_package_devDependencies_cross_env: "^7.0.2",
                 npm_config_version: "",
@@ -23072,7 +23176,7 @@
                 NPM_CONFIG_PYTHON: "/usr/bin/python",
                 npm_config_otp: "",
                 npm_config_cache_min: "10",
-                ITERM_SESSION_ID: "w1t0p2:E10DFDB0-2F8B-49B9-9D56-744F2E08726A",
+                ITERM_SESSION_ID: "w0t0p4:49AD8FFE-4404-4F3E-B8DF-EBECE9776F9E",
                 npm_config_searchexclude: "",
                 npm_config_cache: "/Users/Vizards/.npm",
                 npm_package_scripts_test_coverage: "umi-test --coverage",
@@ -23100,20 +23204,20 @@
                 LC_TERMINAL: "iTerm2",
                 npm_config_send_metrics: "",
                 npm_config_save_bundle: "",
-                npm_config_umask: "0022",
                 npm_config_node_options: "",
+                npm_config_umask: "0022",
                 npm_config_init_version: "1.0.0",
                 npm_config_init_author_name: "",
                 npm_config_git: "git",
                 npm_config_scope: "",
+                npm_config_onload_script: "",
                 npm_config_unsafe_perm: "true",
                 npm_config_tmp:
                   "/var/folders/91/dm2gt7fs07s660d1z0x26r_m0000gp/T",
-                npm_config_onload_script: "",
                 npm_node_execpath:
                   "/Users/Vizards/.nvm/versions/node/v10.16.0/bin/node",
-                npm_config_prefix: "/usr/local",
                 npm_config_link: "",
+                npm_config_prefix: "/usr/local",
                 npm_config_version_tag_prefix: "v",
                 COLORTERM: "truecolor",
                 NODE_ENV: "production",
@@ -26761,7 +26865,13 @@
     "use strict";
     n.r(t);
     var r = n("9kvl");
-    t["default"] = { history: r["c"] };
+    n.d(t, "history", function () {
+      return r["c"];
+    });
+    var o = n("KPPC");
+    n.d(t, "generatePrivilegesTreeData", function () {
+      return o["b"];
+    });
   },
   "V/6I": function (e, t, n) {
     "use strict";
@@ -31696,10 +31806,10 @@
                         npm_package_dependencies_umi: "3.0.7",
                         AUTOJUMP_ERROR_PATH:
                           "/Users/Vizards/Library/autojump/errors.log",
-                        npm_config_viewer: "man",
                         npm_config_only: "",
-                        npm_config_commit_hooks: "true",
                         npm_config_browser: "",
+                        npm_config_viewer: "man",
+                        npm_config_commit_hooks: "true",
                         SPACESHIP_VERSION: "3.11.1",
                         npm_config_also: "",
                         UMI_ENV: "prod",
@@ -31719,11 +31829,11 @@
                         npm_config_globalignorefile: "/usr/local/etc/npmignore",
                         SHELL: "/bin/zsh",
                         TERM: "xterm-256color",
+                        npm_config_init_author_url: "",
                         npm_config_shell: "/bin/zsh",
                         npm_config_maxsockets: "50",
-                        npm_config_init_author_url: "",
-                        npm_config_shrinkwrap: "true",
                         npm_config_parseable: "",
+                        npm_config_shrinkwrap: "true",
                         npm_config_metrics_registry:
                           "https://registry.yarnpkg.com/",
                         TMPDIR:
@@ -31738,10 +31848,10 @@
                         npm_config_preid: "",
                         npm_config_long: "",
                         npm_config_local_address: "",
-                        npm_config_git_tag_version: "true",
                         npm_config_cert: "",
+                        npm_config_git_tag_version: "true",
                         TERM_SESSION_ID:
-                          "w1t0p2:E10DFDB0-2F8B-49B9-9D56-744F2E08726A",
+                          "w0t0p4:49AD8FFE-4404-4F3E-B8DF-EBECE9776F9E",
                         npm_config_noproxy: "",
                         npm_config_fetch_retries: "2",
                         npm_config_home: "https://www.npmjs.org",
@@ -31751,8 +31861,8 @@
                         npm_package_dependencies_lint_staged: "^10.0.9",
                         ZSH: "/Users/Vizards/.oh-my-zsh",
                         npm_config_versions: "",
-                        npm_config_message: "%s",
                         npm_config_key: "",
+                        npm_config_message: "%s",
                         npm_package_readmeFilename: "README.md",
                         npm_config_python: "/usr/bin/python",
                         npm_package_description: "## Getting Started",
@@ -31760,8 +31870,8 @@
                         NVM_DIR: "/Users/Vizards/.nvm",
                         npm_config_globalconfig: "/usr/local/etc/npmrc",
                         npm_config_prefer_online: "",
-                        npm_config_logs_max: "10",
                         npm_config_always_auth: "",
+                        npm_config_logs_max: "10",
                         SSH_AUTH_SOCK:
                           "/private/tmp/com.apple.launchd.4dRleHmdv8/Listeners",
                         __CF_USER_TEXT_ENCODING: "0x1F6:0x19:0x34",
@@ -31770,15 +31880,15 @@
                         npm_config_global_style: "",
                         npm_config_cache_lock_retries: "10",
                         npm_package_dependencies_prettier: "^2.0.2",
-                        npm_config_update_notifier: "true",
                         npm_config_cafile: "",
+                        npm_config_update_notifier: "true",
                         PAGER: "less",
                         npm_config_heading: "npm",
                         npm_config_audit_level: "low",
                         LSCOLORS: "Gxfxcxdxbxegedabagacad",
-                        npm_config_searchlimit: "20",
                         npm_config_read_only: "",
                         npm_config_offline: "",
+                        npm_config_searchlimit: "20",
                         npm_config_fetch_retry_mintimeout: "10000",
                         npm_package_dependencies__umijs_preset_react: "1.x",
                         npm_config_json: "",
@@ -31786,7 +31896,7 @@
                         npm_config_argv:
                           '{"remain":[],"cooked":["run","build"],"original":["run","build"]}',
                         PATH:
-                          "/Users/Vizards/.nvm/versions/node/v10.16.0/lib/node_modules/npm/node_modules/npm-lifecycle/node-gyp-bin:/Users/Vizards/Code/AEMP/foundation/node_modules/.bin:/var/folders/91/dm2gt7fs07s660d1z0x26r_m0000gp/T/yarn--1585562904976-0.8157899420000285:/Users/Vizards/Code/AEMP/node_modules/.bin:/Users/Vizards/.config/yarn/link/node_modules/.bin:/Users/Vizards/.nvm/versions/node/v10.16.0/libexec/lib/node_modules/npm/bin/node-gyp-bin:/Users/Vizards/.nvm/versions/node/v10.16.0/lib/node_modules/npm/bin/node-gyp-bin:/Users/Vizards/.nvm/versions/node/v10.16.0/bin/node_modules/npm/bin/node-gyp-bin:/Users/Vizards/.nvm/versions/node/v10.16.0/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin",
+                          "/Users/Vizards/.nvm/versions/node/v10.16.0/lib/node_modules/npm/node_modules/npm-lifecycle/node-gyp-bin:/Users/Vizards/Code/AEMP/foundation/node_modules/.bin:/Users/Vizards/.nvm/versions/node/v10.16.0/lib/node_modules/npm/node_modules/npm-lifecycle/node-gyp-bin:/Users/Vizards/Code/AEMP/node_modules/.bin:/var/folders/91/dm2gt7fs07s660d1z0x26r_m0000gp/T/yarn--1585719458019-0.1618087441177678:/Users/Vizards/Code/AEMP/node_modules/.bin:/Users/Vizards/.config/yarn/link/node_modules/.bin:/Users/Vizards/.nvm/versions/node/v10.16.0/libexec/lib/node_modules/npm/bin/node-gyp-bin:/Users/Vizards/.nvm/versions/node/v10.16.0/lib/node_modules/npm/bin/node-gyp-bin:/Users/Vizards/.nvm/versions/node/v10.16.0/bin/node_modules/npm/bin/node-gyp-bin:/Users/Vizards/.nvm/versions/node/v10.16.0/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin",
                         npm_config_allow_same_version: "",
                         npm_config_https_proxy: "",
                         npm_config_engine_strict: "",
@@ -31803,26 +31913,26 @@
                         npm_package_lint_staged___ts__x__0:
                           "prettier --parser=typescript --write",
                         EDITOR: "code",
-                        npm_config_save: "true",
                         npm_config_ignore_prepublish: "",
+                        npm_config_save: "true",
                         npm_config_editor: "code",
                         npm_config_auth_type: "legacy",
                         npm_package_name: "",
                         LANG: "zh_CN.UTF-8",
-                        npm_config_tag: "latest",
                         npm_config_script_shell: "",
+                        npm_config_tag: "latest",
                         ITERM_PROFILE: "Default",
-                        npm_config_progress: "true",
                         npm_config_global: "",
                         npm_config_before: "",
+                        npm_config_progress: "true",
                         npm_config_version_commit_hooks: "true",
                         npm_package_scripts_build:
                           "cross-env UMI_ENV=prod umi build",
                         npm_package_scripts_start:
                           "cross-env UMI_ENV=dev umi dev",
+                        npm_config_ham_it_up: "",
                         npm_config_searchstaleness: "900",
                         npm_config_optional: "true",
-                        npm_config_ham_it_up: "",
                         XPC_FLAGS: "0x0",
                         npm_config_save_prod: "",
                         npm_config_force: "",
@@ -31842,21 +31952,21 @@
                         npm_config_unicode: "true",
                         COLORFGBG: "15;0",
                         HOME: "/Users/Vizards",
-                        SHLVL: "3",
+                        SHLVL: "4",
                         npm_config_fetch_retry_maxtimeout: "60000",
                         npm_package_scripts_test: "umi-test",
+                        npm_config_ca: "",
                         npm_config_tag_version_prefix: "v",
                         npm_config_sso_type: "oauth",
                         npm_config_scripts_prepend_node_path: "warn-only",
                         npm_config_loglevel: "notice",
-                        npm_config_ca: "",
                         npm_config_strict_ssl: "true",
                         npm_config_save_prefix: "^",
                         LC_TERMINAL_VERSION: "3.3.10beta2",
                         npm_config_save_exact: "",
+                        npm_config_dev: "",
                         npm_config_group: "20",
                         npm_config_fetch_retry_factor: "10",
-                        npm_config_dev: "",
                         npm_config_version_git_message: "v%s",
                         npm_package_devDependencies_cross_env: "^7.0.2",
                         npm_config_version: "",
@@ -31867,7 +31977,7 @@
                         npm_config_otp: "",
                         npm_config_cache_min: "10",
                         ITERM_SESSION_ID:
-                          "w1t0p2:E10DFDB0-2F8B-49B9-9D56-744F2E08726A",
+                          "w0t0p4:49AD8FFE-4404-4F3E-B8DF-EBECE9776F9E",
                         npm_config_searchexclude: "",
                         npm_config_cache: "/Users/Vizards/.npm",
                         npm_package_scripts_test_coverage:
@@ -31898,20 +32008,20 @@
                         LC_TERMINAL: "iTerm2",
                         npm_config_send_metrics: "",
                         npm_config_save_bundle: "",
-                        npm_config_umask: "0022",
                         npm_config_node_options: "",
+                        npm_config_umask: "0022",
                         npm_config_init_version: "1.0.0",
                         npm_config_init_author_name: "",
                         npm_config_git: "git",
                         npm_config_scope: "",
+                        npm_config_onload_script: "",
                         npm_config_unsafe_perm: "true",
                         npm_config_tmp:
                           "/var/folders/91/dm2gt7fs07s660d1z0x26r_m0000gp/T",
-                        npm_config_onload_script: "",
                         npm_node_execpath:
                           "/Users/Vizards/.nvm/versions/node/v10.16.0/bin/node",
-                        npm_config_prefix: "/usr/local",
                         npm_config_link: "",
+                        npm_config_prefix: "/usr/local",
                         npm_config_version_tag_prefix: "v",
                         COLORTERM: "truecolor",
                         NODE_ENV: "production",
@@ -32337,10 +32447,10 @@
                 npm_package_dependencies_umi: "3.0.7",
                 AUTOJUMP_ERROR_PATH:
                   "/Users/Vizards/Library/autojump/errors.log",
-                npm_config_viewer: "man",
                 npm_config_only: "",
-                npm_config_commit_hooks: "true",
                 npm_config_browser: "",
+                npm_config_viewer: "man",
+                npm_config_commit_hooks: "true",
                 SPACESHIP_VERSION: "3.11.1",
                 npm_config_also: "",
                 UMI_ENV: "prod",
@@ -32359,11 +32469,11 @@
                 npm_config_globalignorefile: "/usr/local/etc/npmignore",
                 SHELL: "/bin/zsh",
                 TERM: "xterm-256color",
+                npm_config_init_author_url: "",
                 npm_config_shell: "/bin/zsh",
                 npm_config_maxsockets: "50",
-                npm_config_init_author_url: "",
-                npm_config_shrinkwrap: "true",
                 npm_config_parseable: "",
+                npm_config_shrinkwrap: "true",
                 npm_config_metrics_registry: "https://registry.yarnpkg.com/",
                 TMPDIR: "/var/folders/91/dm2gt7fs07s660d1z0x26r_m0000gp/T/",
                 npm_config_timing: "",
@@ -32376,9 +32486,9 @@
                 npm_config_preid: "",
                 npm_config_long: "",
                 npm_config_local_address: "",
-                npm_config_git_tag_version: "true",
                 npm_config_cert: "",
-                TERM_SESSION_ID: "w1t0p2:E10DFDB0-2F8B-49B9-9D56-744F2E08726A",
+                npm_config_git_tag_version: "true",
+                TERM_SESSION_ID: "w0t0p4:49AD8FFE-4404-4F3E-B8DF-EBECE9776F9E",
                 npm_config_noproxy: "",
                 npm_config_fetch_retries: "2",
                 npm_config_home: "https://www.npmjs.org",
@@ -32388,8 +32498,8 @@
                 npm_package_dependencies_lint_staged: "^10.0.9",
                 ZSH: "/Users/Vizards/.oh-my-zsh",
                 npm_config_versions: "",
-                npm_config_message: "%s",
                 npm_config_key: "",
+                npm_config_message: "%s",
                 npm_package_readmeFilename: "README.md",
                 npm_config_python: "/usr/bin/python",
                 npm_package_description: "## Getting Started",
@@ -32397,8 +32507,8 @@
                 NVM_DIR: "/Users/Vizards/.nvm",
                 npm_config_globalconfig: "/usr/local/etc/npmrc",
                 npm_config_prefer_online: "",
-                npm_config_logs_max: "10",
                 npm_config_always_auth: "",
+                npm_config_logs_max: "10",
                 SSH_AUTH_SOCK:
                   "/private/tmp/com.apple.launchd.4dRleHmdv8/Listeners",
                 __CF_USER_TEXT_ENCODING: "0x1F6:0x19:0x34",
@@ -32407,15 +32517,15 @@
                 npm_config_global_style: "",
                 npm_config_cache_lock_retries: "10",
                 npm_package_dependencies_prettier: "^2.0.2",
-                npm_config_update_notifier: "true",
                 npm_config_cafile: "",
+                npm_config_update_notifier: "true",
                 PAGER: "less",
                 npm_config_heading: "npm",
                 npm_config_audit_level: "low",
                 LSCOLORS: "Gxfxcxdxbxegedabagacad",
-                npm_config_searchlimit: "20",
                 npm_config_read_only: "",
                 npm_config_offline: "",
+                npm_config_searchlimit: "20",
                 npm_config_fetch_retry_mintimeout: "10000",
                 npm_package_dependencies__umijs_preset_react: "1.x",
                 npm_config_json: "",
@@ -32423,7 +32533,7 @@
                 npm_config_argv:
                   '{"remain":[],"cooked":["run","build"],"original":["run","build"]}',
                 PATH:
-                  "/Users/Vizards/.nvm/versions/node/v10.16.0/lib/node_modules/npm/node_modules/npm-lifecycle/node-gyp-bin:/Users/Vizards/Code/AEMP/foundation/node_modules/.bin:/var/folders/91/dm2gt7fs07s660d1z0x26r_m0000gp/T/yarn--1585562904976-0.8157899420000285:/Users/Vizards/Code/AEMP/node_modules/.bin:/Users/Vizards/.config/yarn/link/node_modules/.bin:/Users/Vizards/.nvm/versions/node/v10.16.0/libexec/lib/node_modules/npm/bin/node-gyp-bin:/Users/Vizards/.nvm/versions/node/v10.16.0/lib/node_modules/npm/bin/node-gyp-bin:/Users/Vizards/.nvm/versions/node/v10.16.0/bin/node_modules/npm/bin/node-gyp-bin:/Users/Vizards/.nvm/versions/node/v10.16.0/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin",
+                  "/Users/Vizards/.nvm/versions/node/v10.16.0/lib/node_modules/npm/node_modules/npm-lifecycle/node-gyp-bin:/Users/Vizards/Code/AEMP/foundation/node_modules/.bin:/Users/Vizards/.nvm/versions/node/v10.16.0/lib/node_modules/npm/node_modules/npm-lifecycle/node-gyp-bin:/Users/Vizards/Code/AEMP/node_modules/.bin:/var/folders/91/dm2gt7fs07s660d1z0x26r_m0000gp/T/yarn--1585719458019-0.1618087441177678:/Users/Vizards/Code/AEMP/node_modules/.bin:/Users/Vizards/.config/yarn/link/node_modules/.bin:/Users/Vizards/.nvm/versions/node/v10.16.0/libexec/lib/node_modules/npm/bin/node-gyp-bin:/Users/Vizards/.nvm/versions/node/v10.16.0/lib/node_modules/npm/bin/node-gyp-bin:/Users/Vizards/.nvm/versions/node/v10.16.0/bin/node_modules/npm/bin/node-gyp-bin:/Users/Vizards/.nvm/versions/node/v10.16.0/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin",
                 npm_config_allow_same_version: "",
                 npm_config_https_proxy: "",
                 npm_config_engine_strict: "",
@@ -32440,24 +32550,24 @@
                 npm_package_lint_staged___ts__x__0:
                   "prettier --parser=typescript --write",
                 EDITOR: "code",
-                npm_config_save: "true",
                 npm_config_ignore_prepublish: "",
+                npm_config_save: "true",
                 npm_config_editor: "code",
                 npm_config_auth_type: "legacy",
                 npm_package_name: "",
                 LANG: "zh_CN.UTF-8",
-                npm_config_tag: "latest",
                 npm_config_script_shell: "",
+                npm_config_tag: "latest",
                 ITERM_PROFILE: "Default",
-                npm_config_progress: "true",
                 npm_config_global: "",
                 npm_config_before: "",
+                npm_config_progress: "true",
                 npm_config_version_commit_hooks: "true",
                 npm_package_scripts_build: "cross-env UMI_ENV=prod umi build",
                 npm_package_scripts_start: "cross-env UMI_ENV=dev umi dev",
+                npm_config_ham_it_up: "",
                 npm_config_searchstaleness: "900",
                 npm_config_optional: "true",
-                npm_config_ham_it_up: "",
                 XPC_FLAGS: "0x0",
                 npm_config_save_prod: "",
                 npm_config_force: "",
@@ -32476,21 +32586,21 @@
                 npm_config_unicode: "true",
                 COLORFGBG: "15;0",
                 HOME: "/Users/Vizards",
-                SHLVL: "3",
+                SHLVL: "4",
                 npm_config_fetch_retry_maxtimeout: "60000",
                 npm_package_scripts_test: "umi-test",
+                npm_config_ca: "",
                 npm_config_tag_version_prefix: "v",
                 npm_config_sso_type: "oauth",
                 npm_config_scripts_prepend_node_path: "warn-only",
                 npm_config_loglevel: "notice",
-                npm_config_ca: "",
                 npm_config_strict_ssl: "true",
                 npm_config_save_prefix: "^",
                 LC_TERMINAL_VERSION: "3.3.10beta2",
                 npm_config_save_exact: "",
+                npm_config_dev: "",
                 npm_config_group: "20",
                 npm_config_fetch_retry_factor: "10",
-                npm_config_dev: "",
                 npm_config_version_git_message: "v%s",
                 npm_package_devDependencies_cross_env: "^7.0.2",
                 npm_config_version: "",
@@ -32500,7 +32610,7 @@
                 NPM_CONFIG_PYTHON: "/usr/bin/python",
                 npm_config_otp: "",
                 npm_config_cache_min: "10",
-                ITERM_SESSION_ID: "w1t0p2:E10DFDB0-2F8B-49B9-9D56-744F2E08726A",
+                ITERM_SESSION_ID: "w0t0p4:49AD8FFE-4404-4F3E-B8DF-EBECE9776F9E",
                 npm_config_searchexclude: "",
                 npm_config_cache: "/Users/Vizards/.npm",
                 npm_package_scripts_test_coverage: "umi-test --coverage",
@@ -32528,20 +32638,20 @@
                 LC_TERMINAL: "iTerm2",
                 npm_config_send_metrics: "",
                 npm_config_save_bundle: "",
-                npm_config_umask: "0022",
                 npm_config_node_options: "",
+                npm_config_umask: "0022",
                 npm_config_init_version: "1.0.0",
                 npm_config_init_author_name: "",
                 npm_config_git: "git",
                 npm_config_scope: "",
+                npm_config_onload_script: "",
                 npm_config_unsafe_perm: "true",
                 npm_config_tmp:
                   "/var/folders/91/dm2gt7fs07s660d1z0x26r_m0000gp/T",
-                npm_config_onload_script: "",
                 npm_node_execpath:
                   "/Users/Vizards/.nvm/versions/node/v10.16.0/bin/node",
-                npm_config_prefix: "/usr/local",
                 npm_config_link: "",
+                npm_config_prefix: "/usr/local",
                 npm_config_version_tag_prefix: "v",
                 COLORTERM: "truecolor",
                 NODE_ENV: "production",
@@ -35122,37 +35232,48 @@
   vSPo: function (e, t, n) {
     "use strict";
     n.d(t, "a", function () {
-      return i;
+      return a;
     }),
-      n.d(t, "e", function () {
+      n.d(t, "f", function () {
         return u;
       }),
-      n.d(t, "c", function () {
+      n.d(t, "e", function () {
         return c;
       }),
-      n.d(t, "d", function () {
+      n.d(t, "c", function () {
         return l;
       }),
-      n.d(t, "b", function () {
+      n.d(t, "d", function () {
         return s;
+      }),
+      n.d(t, "b", function () {
+        return f;
       });
     var r = n("9kvl"),
-      o = { "/": "/home" },
-      i = () => {
+      o = n("HiTA"),
+      i = { "/": "/home" },
+      a = () => {
         var e = location.pathname;
         "/" === e.charAt(e.length - 1) &&
           r["c"].replace(e.substr(0, e.length - 1)),
-          Object.keys(o).forEach((t) => {
-            e === t && r["c"].replace(o[t]);
+          Object.keys(i).forEach((t) => {
+            e === t && r["c"].replace(i[t]);
           });
       },
-      a = [
-        { path: "/home", title: "\u9996\u9875" },
+      u = [
+        { path: "/home", title: "\u9996\u9875", privilegeId: null },
         {
           sidebar: !1,
           path: "/account",
+          privilegeId: null,
+          title: "\u8d26\u6237",
           routes: [
-            { path: "/account/login", title: "\u767b\u5f55", sidebar: !1 },
+            {
+              path: "/account/login",
+              title: "\u767b\u5f55",
+              sidebar: !1,
+              privilegeId: null,
+            },
           ],
         },
         {
@@ -35176,12 +35297,22 @@
               sidebar: !1,
               privilegeId: "\u67e5\u770b\u8f66\u8f86\u8be6\u60c5",
             },
+            {
+              sidebar: !1,
+              title: "\u5f02\u6b65\u6309\u94ae",
+              privilegeId:
+                "\u67e5\u770b\u5f02\u6b65\u6e32\u67d3\u7684\u6309\u94ae",
+            },
           ],
         },
-        { path: "/oss", title: "OSS \u9875\u9762" },
+        {
+          path: "/oss",
+          title: "OSS \u9875\u9762",
+          privilegeId: "\u67e5\u770bOSS\u9875\u9762",
+        },
       ],
-      u = {
-        routes: a,
+      c = {
+        routes: u,
         defaultSelectKeys: ["/"],
         defaultOpenKeys: ["/"],
         generateDefaultOpenKeys: () => {
@@ -35219,7 +35350,7 @@
                 location.pathname === n.path && (e = n.path);
               });
             };
-          return t(a), [e];
+          return t(u), [e];
         },
         generateDefaultKeys: function () {
           var e = "/" === location.pathname;
@@ -35233,7 +35364,7 @@
           };
         },
       },
-      c = () => {
+      l = () => {
         var e = [],
           t = location.pathname,
           n = (r) => {
@@ -35252,14 +35383,14 @@
                 r.routes && n(r.routes);
             });
           };
-        return n(a), e;
+        return n(u), e;
       },
-      l = () => {
+      s = () => {
         var e = void 0,
           t = (t) => {
             t.privilegeId &&
-              window.__bannedPrivileges &&
-              window.__bannedPrivileges.includes(t.privilegeId) &&
+              o["a"]._banned() &&
+              o["a"]._banned().includes(t.privilegeId) &&
               (e = "403");
           },
           n = (r) => {
@@ -35279,9 +35410,9 @@
                   ((e = !1 !== r.sidebar ? "children" : "brother"), t(r));
             });
           };
-        return n(a), e;
+        return n(u), e;
       },
-      s = () => {
+      f = () => {
         localStorage.getItem("profile") || r["c"].replace("/account/login");
       };
   },

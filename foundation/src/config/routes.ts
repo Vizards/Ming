@@ -1,9 +1,6 @@
-declare global {
-  interface Window {
-    __bannedPrivileges: string[];
-  }
-}
-import { IRoute, history } from 'umi';
+import { history } from 'umi';
+import { MingRoute } from '@/typings/interface';
+import { privileges } from '@/utils/permission';
 
 export const redirectMap: { [key: string]: string } = {
   '/': '/home',
@@ -21,15 +18,25 @@ export const autoRedirect = () => {
   });
 };
 
-export const routes: IRoute[] = [
+export const routes: MingRoute[] = [
   {
     path: '/home',
     title: '首页',
+    privilegeId: null,
   },
   {
     sidebar: false, // 是否展示在左侧菜单栏，默认展示
     path: '/account',
-    routes: [{ path: '/account/login', title: '登录', sidebar: false }],
+    privilegeId: null,
+    title: '账户',
+    routes: [
+      {
+        path: '/account/login',
+        title: '登录',
+        sidebar: false,
+        privilegeId: null,
+      },
+    ],
   },
   {
     path: '/car',
@@ -48,11 +55,17 @@ export const routes: IRoute[] = [
         sidebar: false,
         privilegeId: '查看车辆详情',
       },
+      {
+        sidebar: false,
+        title: '异步按钮',
+        privilegeId: '查看异步渲染的按钮',
+      },
     ],
   },
   {
     path: '/oss',
     title: 'OSS 页面',
+    privilegeId: '查看OSS页面',
   },
 ];
 
@@ -76,7 +89,7 @@ export const menu = {
   },
   generateDefaultSelectKeys: () => {
     let defaultSelectedKey: string = '';
-    const recursiveRoutesToSetDefaultSelectKey = (routes: IRoute[]) => {
+    const recursiveRoutesToSetDefaultSelectKey = (routes: MingRoute[]) => {
       routes.forEach((route) => {
         if (route.routes) {
           recursiveRoutesToSetDefaultSelectKey(route.routes);
@@ -114,7 +127,7 @@ export const menu = {
 export const generateBreadCrumbPathArr = () => {
   const breadCrumbArr: string[] = [];
   const pathname = location.pathname;
-  const recursiveGenerateBreadCrumbArr = (routes: IRoute[]) => {
+  const recursiveGenerateBreadCrumbArr = (routes: MingRoute[]) => {
     routes.forEach((route) => {
       if (pathname.startsWith(route.path!)) {
         breadCrumbArr.push(route.title!);
@@ -136,17 +149,17 @@ export const generateBreadCrumbPathArr = () => {
 
 export const getApplicationType: () => undefined | string = () => {
   let applicationType: undefined | string = undefined;
-  const privilegeDetection = (route: IRoute) => {
+  const privilegeDetection = (route: MingRoute) => {
     if (
       route.privilegeId &&
-      window.__bannedPrivileges &&
-      window.__bannedPrivileges.includes(route.privilegeId)
+      privileges._banned() &&
+      privileges._banned().includes(route.privilegeId)
     ) {
       // 匹配到无权限的路由时
       applicationType = '403';
     }
   };
-  const recursiveSidebarMap = (routes: IRoute[]) => {
+  const recursiveSidebarMap = (routes: MingRoute[]) => {
     routes.forEach((route) => {
       if (route.routes) {
         // 有子路由直接继续递归

@@ -1,35 +1,43 @@
-import React from 'react'
-import { useRootExports } from 'umi'
-import { Form, Input, Button, Checkbox } from 'antd'
-import { UserOutlined, LockOutlined } from '@ant-design/icons'
-import { ILoginDTO } from "@/typings/interface"
+import React from 'react';
+import { useRootExports } from 'umi';
+import { Form, Input, Button, Tree } from 'antd';
+import { UserOutlined, LockOutlined } from '@ant-design/icons';
+import { ILoginDTO } from '@/typings/interface';
 
-import styles from './index.less'
-
-const allPrivileges = [
-  '查看全部车辆',
-  '查看超标车辆',
-  '查看车辆详情'
-]
+import styles from './index.less';
 
 export default () => {
-  const { history } = useRootExports().default
+  const [form] = Form.useForm();
+  const { history, generatePrivilegesTreeData } = useRootExports();
   const onFinish = (values: ILoginDTO) => {
-    if (!values.privileges) {
-      values.privileges = []
+    let privileges: string[] = [];
+    if (values.privileges) {
+      // 半选的菜单也要展示在左侧菜单里面嗷
+      privileges = values.privileges.checked.concat(
+        values.privileges.halfChecked,
+      );
     }
-    localStorage.setItem('profile', JSON.stringify(values))
-    history.push('/home')
-  }
+    localStorage.setItem(
+      'profile',
+      JSON.stringify({
+        principal: values.principal,
+        credential: values.credential,
+        privileges,
+      }),
+    );
+    history.push('/home');
+  };
+  const privilegesTreeData: any = generatePrivilegesTreeData();
+  console.log(privilegesTreeData);
   return (
     <main className={styles.account}>
       <h1 className={styles.title}>监控系统 - 登入</h1>
-      <Form initialValues={{ remember: true }} onFinish={onFinish}>
+      <Form initialValues={{ remember: true }} onFinish={onFinish} form={form}>
         <Form.Item
           name="principal"
           rules={[{ required: true, message: '必填' }]}
         >
-          <Input prefix={<UserOutlined />} placeholder="用户名"/>
+          <Input prefix={<UserOutlined />} placeholder="用户名" />
         </Form.Item>
 
         <Form.Item
@@ -42,10 +50,22 @@ export default () => {
         <Form.Item
           name="privileges"
           label="权限分配"
+          valuePropName="checkedKeys"
         >
-          <Checkbox.Group options={allPrivileges.map(privilege => {
-            return { label: privilege, value: privilege }
-          })}/>
+          <Tree
+            checkable
+            treeData={privilegesTreeData}
+            checkedKeys={form.getFieldValue('privileges')}
+            onCheck={(checkedKeys, e) => {
+              console.log(e);
+              form.setFieldsValue({
+                privileges: {
+                  checked: checkedKeys,
+                  halfChecked: e.halfCheckedKeys,
+                },
+              });
+            }}
+          />
         </Form.Item>
 
         <Form.Item>
@@ -55,5 +75,5 @@ export default () => {
         </Form.Item>
       </Form>
     </main>
-  )
-}
+  );
+};
