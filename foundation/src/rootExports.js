@@ -5,5 +5,6 @@
 
 import { history } from 'umi';
 import { generatePrivilegesTreeData } from './utils/helpers';
+import { privileges } from './utils/permission';
 
-export { history, generatePrivilegesTreeData };
+export { history, generatePrivilegesTreeData, privileges };

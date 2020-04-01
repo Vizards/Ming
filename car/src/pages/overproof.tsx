@@ -1,11 +1,11 @@
 import React from 'react';
-import { history } from 'umi';
+import { history, useRootExports } from 'umi';
 import { Descriptions, Button, Divider } from 'antd';
 import styles from './index.less';
 
 export default () => {
-  //@ts-ignore
-  const disabled = window.__bannedPrivileges?.includes('查看车辆详情');
+  const { privileges } = useRootExports();
+  const disabled = privileges._banned().includes('查看车辆详情');
   return (
     <div className={styles.container}>
       <Descriptions title="页面信息" column={1}>
@@ -28,7 +28,6 @@ export default () => {
         type="primary"
         onClick={() => history.push('/detail/1')}
         disabled={disabled}
-        id="查看车辆详情"
       >
         查看车辆1详情
       </Button>
