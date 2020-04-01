@@ -10,13 +10,11 @@ export const getArrDifference = (arr1: string[], arr2: any[]) => {
 export const generatePrivilegesTreeData = () => {
   const recursiveRoutes = (routes: TreeData[]) => {
     routes.forEach((route) => {
-      route.title =
-        route.privilegeId !== null ? route.privilegeId : route.title;
-      route.key =
-        route.privilegeId !== null
-          ? route.privilegeId
-          : Math.random().toString();
-      route.checkable = route.privilegeId !== null;
+      route.title = route.privilegeId ? route.privilegeId : route.title;
+      route.key = route.privilegeId
+        ? route.privilegeId
+        : Math.random().toString();
+      route.checkable = !!route.privilegeId;
       if (route.routes) {
         route.children = route.routes;
         delete route.routes;
@@ -33,7 +31,7 @@ export const generatePrivilegesListData = () => {
   const allPrivileges: string[] = [];
   const recursiveRoutes = (routes: TreeData[]) => {
     routes.forEach((route) => {
-      if (route.privilegeId !== null) {
+      if (route.privilegeId) {
         allPrivileges.push(route.privilegeId);
       }
       if (route.routes) {

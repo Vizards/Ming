@@ -22,19 +22,16 @@ export const routes: MingRoute[] = [
   {
     path: '/home',
     title: '首页',
-    privilegeId: null,
   },
   {
     sidebar: false, // 是否展示在左侧菜单栏，默认展示
     path: '/account',
-    privilegeId: null,
     title: '账户',
     routes: [
       {
         path: '/account/login',
         title: '登录',
         sidebar: false,
-        privilegeId: null,
       },
     ],
   },
