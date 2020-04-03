@@ -20,18 +20,17 @@ const recursiveRoutes = (routes: IRoute[]) => {
 
   const generateMenuItem = (route: IRoute) =>
     menuItemDisplay(route) && (
-      <Menu.Item key={route.path}>
+      <Menu.Item key={route.title}>
         <Link to={route.path!}>{route.title}</Link>
       </Menu.Item>
     );
 
   return routes.map((route) => {
     if (route.routes) {
-      // 如果有子路由
-      if (route.routes.every((route) => route.sidebar === false)) {
-        // 如果子路由全部显式声明不展示在 sidebar，自己却展示在 sidebar，那就作为一个 Menu.Item
-        return generateMenuItem(route);
-      }
+      /*
+       * 如果子路由要么被 ban ，要么 sidebar:false
+       * 那么自己作为父级菜单也不展示
+       */
       if (
         route.routes.every(
           (route) =>
@@ -39,16 +38,14 @@ const recursiveRoutes = (routes: IRoute[]) => {
             route.sidebar === false,
         )
       ) {
-        /*
-         * 如果子路由中存在被 ban 的：
-         * 如果是除了被 ban 的，剩下的全部 sidebar:false
-         * 那么自己作为父级菜单也不展示
-         */
         return null;
       }
       return (
-        // 如果子路由中有展示在 sidebar 的，那么自己作为父级菜单
-        <SubMenu key={route.path} title={route.title}>
+        /*
+         * 如果子路由中有展示在 sidebar 的，那么自己作为父级菜单
+         * 根据 Ant Design 设计规范，父级菜单不应当作导航路由使用
+         */
+        <SubMenu key={route.title} title={route.title}>
           {recursiveRoutes(route.routes)}
         </SubMenu>
       );
@@ -64,8 +61,8 @@ export default () => {
         <div className={styles.logo}>这里是标题 Logo</div>
         <Menu
           mode="inline"
-          defaultSelectedKeys={menu.generateDefaultKeys().defaultSelectKeys}
-          defaultOpenKeys={menu.generateDefaultKeys().defaultOpenKeys}
+          defaultSelectedKeys={menu.generateDefaultKeys()}
+          defaultOpenKeys={menu.generateDefaultKeys()}
           theme="dark"
         >
           {recursiveRoutes(menu.routes)}

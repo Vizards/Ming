@@ -28,7 +28,6 @@ export default () => {
     history.push('/home');
   };
   const privilegesTreeData: any = generatePrivilegesTreeData();
-  console.log(privilegesTreeData);
   return (
     <main className={styles.account}>
       <h1 className={styles.title}>监控系统 - 登入</h1>
@@ -57,7 +56,6 @@ export default () => {
             treeData={privilegesTreeData}
             checkedKeys={form.getFieldValue('privileges')}
             onCheck={(checkedKeys, e) => {
-              console.log(e);
               form.setFieldsValue({
                 privileges: {
                   checked: checkedKeys,

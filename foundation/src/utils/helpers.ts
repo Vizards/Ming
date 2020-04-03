@@ -1,5 +1,7 @@
 import { routes } from '@/config/routes';
-import { TreeData } from '@/typings/interface';
+import { TreeData, MingRoute } from '@/typings/interface';
+import { pathToRegexp } from 'path-to-regexp';
+import { history } from '@@/core/history';
 
 export const getArrDifference = (arr1: string[], arr2: any[]) => {
   return arr1.concat(arr2).filter((v, i, arr) => {
@@ -41,4 +43,41 @@ export const generatePrivilegesListData = () => {
   };
   recursiveRoutes(routes);
   return allPrivileges;
+};
+
+export const generateRouteTitlePathList = () => {
+  const titlePathArr: { path: string; titleArr: string[] }[] = [];
+  let tempTitleArr: string[] = [];
+
+  const recursiveRoutes = (
+    routes: MingRoute[],
+    parentTitles: string[] = [],
+  ) => {
+    routes.forEach((route) => {
+      tempTitleArr = parentTitles;
+      if (route.routes) {
+        recursiveRoutes(route.routes, parentTitles.concat([route.title!]));
+      }
+      if (!route.routes) {
+        titlePathArr.push({
+          path: route.path ? route.path : '',
+          titleArr: tempTitleArr.concat([route.title]),
+        });
+        tempTitleArr = [];
+      }
+    });
+  };
+  recursiveRoutes(routes);
+  return titlePathArr;
+};
+
+export const getCurrentTitleList = () => {
+  const titlePathList = generateRouteTitlePathList();
+  let currentTitleList: string[] = [];
+  titlePathList.forEach((obj) => {
+    if (pathToRegexp(obj.path)?.exec(history.location.pathname)) {
+      currentTitleList = obj.titleArr;
+    }
+  });
+  return currentTitleList;
 };

@@ -1,6 +1,8 @@
 import { history } from 'umi';
+import { pathToRegexp } from 'path-to-regexp';
 import { MingRoute } from '@/typings/interface';
 import { privileges } from '@/utils/permission';
+import { getCurrentTitleList } from '@/utils/helpers';
 
 export const redirectMap: { [key: string]: string } = {
   '/': '/home',
@@ -25,7 +27,6 @@ export const routes: MingRoute[] = [
   },
   {
     sidebar: false, // 是否展示在左侧菜单栏，默认展示
-    path: '/account',
     title: '账户',
     routes: [
       {
@@ -68,80 +69,7 @@ export const routes: MingRoute[] = [
 
 export const menu = {
   routes,
-  defaultSelectKeys: ['/'],
-  defaultOpenKeys: ['/'],
-  generateDefaultOpenKeys: () => {
-    const paths = location.pathname
-      .split('/')
-      .filter((path) => path.length > 0);
-    const defaultOpenKeys: string[] = [];
-    paths.forEach((path) => {
-      defaultOpenKeys.push(
-        defaultOpenKeys.length === 0
-          ? `/${path}`
-          : `${defaultOpenKeys[defaultOpenKeys.length - 1]}/${path}`,
-      );
-    });
-    return defaultOpenKeys;
-  },
-  generateDefaultSelectKeys: () => {
-    let defaultSelectedKey: string = '';
-    const recursiveRoutesToSetDefaultSelectKey = (routes: MingRoute[]) => {
-      routes.forEach((route) => {
-        if (route.routes) {
-          recursiveRoutesToSetDefaultSelectKey(route.routes);
-        }
-        if (
-          route.path?.includes(':') &&
-          location.pathname.startsWith(route.path?.split(':')[0])
-        ) {
-          // 动态路由处理
-          defaultSelectedKey = route.path?.split('/:')[0];
-        }
-        if (location.pathname === route.path) {
-          // 静态路由直接匹配
-          defaultSelectedKey = route.path;
-        }
-      });
-    };
-    recursiveRoutesToSetDefaultSelectKey(routes);
-    return [defaultSelectedKey];
-  },
-  generateDefaultKeys: function () {
-    const isIndex = location.pathname === '/';
-    return {
-      defaultSelectKeys: isIndex
-        ? this.defaultSelectKeys
-        : this.generateDefaultSelectKeys(),
-      defaultOpenKeys: isIndex
-        ? this.defaultOpenKeys
-        : this.generateDefaultOpenKeys(),
-    };
-  },
-};
-
-// 生成面包屑路径
-export const generateBreadCrumbPathArr = () => {
-  const breadCrumbArr: string[] = [];
-  const pathname = location.pathname;
-  const recursiveGenerateBreadCrumbArr = (routes: MingRoute[]) => {
-    routes.forEach((route) => {
-      if (pathname.startsWith(route.path!)) {
-        breadCrumbArr.push(route.title!);
-      }
-      if (
-        route.path?.includes(':') &&
-        pathname.startsWith(route.path?.split(':')[0])
-      ) {
-        breadCrumbArr.push(route.title!);
-      }
-      if (route.routes) {
-        recursiveGenerateBreadCrumbArr(route.routes);
-      }
-    });
-  };
-  recursiveGenerateBreadCrumbArr(routes);
-  return breadCrumbArr;
+  generateDefaultKeys: () => getCurrentTitleList(),
 };
 
 export const getApplicationType: () => undefined | string = () => {
@@ -163,15 +91,10 @@ export const getApplicationType: () => undefined | string = () => {
         recursiveSidebarMap(route.routes);
       }
       if (
-        route.path?.includes(':') &&
-        location.pathname.startsWith(route.path?.split(':')[0])
+        route.path &&
+        pathToRegexp(route.path).exec(history.location.pathname)
       ) {
-        // 动态路由处理
-        applicationType = 'children';
-        privilegeDetection(route);
-      }
-      if (location.pathname === route.path) {
-        // 静态路由直接匹配
+        // 路由匹配，根据 sidebar 确定子应用类型
         applicationType = route.sidebar !== false ? 'children' : 'brother';
         privilegeDetection(route);
       }

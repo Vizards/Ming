@@ -23,6 +23,7 @@
     "@umijs/preset-react": "1.x",
     "@umijs/test": "3.0.16",
     "lint-staged": "^10.0.9",
+    "path-to-regexp": "^6.1.0",
     "prettier": "^2.0.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
