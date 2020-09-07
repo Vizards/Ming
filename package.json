@@ -4,7 +4,7 @@
   "description": "Ming means Sun and Moon, A framework worked with qiankun and umi3.x",
   "main": "app.js",
   "scripts": {
-    "build:all": "npm run build:foundation & npm run build:account & npm run build:home & npm run build:car && npm run copy",
+    "build:all": "mkdir dist && npm run build:foundation & npm run build:account & npm run build:home & npm run build:car && npm run copy",
     "build:foundation": "cd foundation && npm install && npm run build && rm -f ../dist/umi.*.js && rm -f ../dist/umi.*.css && cp dist/* ../dist/",
     "build:account": "cd account && npm install && npm run build:qiankun && rm -rf ../dist/account/ && cp -rvf dist ../dist/account",
     "build:home": "cd home && npm install && npm run build:qiankun && rm -rf ../dist/home/ && cp -rvf dist ../dist/home",
