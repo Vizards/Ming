@@ -5,10 +5,10 @@
   "main": "app.js",
   "scripts": {
     "build:all": "npm run build:foundation & npm run build:account & npm run build:home & npm run build:car && npm run copy",
-    "build:foundation": "cd foundation && npm run build && rm -f ../dist/umi.*.js && rm -f ../dist/umi.*.css && cp dist/* ../dist/",
-    "build:account": "cd account && npm run build:qiankun && rm -rf ../dist/account/ && cp -rvf dist ../dist/account",
-    "build:home": "cd home && npm run build:qiankun && rm -rf ../dist/home/ && cp -rvf dist ../dist/home",
-    "build:car": "cd car && npm run build:qiankun && rm -rf ../dist/car/ && cp -rvf dist ../dist/car",
+    "build:foundation": "cd foundation && npm install && npm run build && rm -f ../dist/umi.*.js && rm -f ../dist/umi.*.css && cp dist/* ../dist/",
+    "build:account": "cd account && npm install && npm run build:qiankun && rm -rf ../dist/account/ && cp -rvf dist ../dist/account",
+    "build:home": "cd home && npm install && npm run build:qiankun && rm -rf ../dist/home/ && cp -rvf dist ../dist/home",
+    "build:car": "cd car && npm install && npm run build:qiankun && rm -rf ../dist/car/ && cp -rvf dist ../dist/car",
     "copy": "cp app.js dist/ && cp package.json dist/ && cp Dockerfile dist/"
   },
   "repository": {
