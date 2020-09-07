@@ -4,15 +4,23 @@ on:
   push:
     branches:
       - template
-
+  pull_request:
+    branches:
+      - master
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: '12.x'
+      - run: npm run build:all
       - uses: akhileshns/heroku-deploy@v3.4.6
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: ${{secrets.HEROKU_APP_NAME}}
           heroku_email: ${{secrets.HEROKU_USER_NAME}}
+          app_dir: dist
           usedocker: true
