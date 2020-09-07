@@ -23,7 +23,7 @@ const Exception: React.FC<IExceptionProps> = ({ type }) => {
   }
 
   const backHome = () => {
-    history.replace('/home')
+    history.replace('/')
   }
 
   return (

@@ -1,4 +1,4 @@
-import { routes } from '@/config/routes';
+import { routes } from '@/utils/routes';
 import { TreeData, MingRoute } from '@/typings/interface';
 import { pathToRegexp } from 'path-to-regexp';
 import { history } from '@@/core/history';
@@ -61,7 +61,7 @@ export const generateRouteTitlePathList = () => {
       if (!route.routes) {
         titlePathArr.push({
           path: route.path ? route.path : '',
-          titleArr: tempTitleArr.concat([route.title]),
+          titleArr: tempTitleArr.concat([route.title!]),
         });
         tempTitleArr = [];
       }

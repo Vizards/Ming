@@ -1,7 +1,7 @@
 import { IRoute } from 'umi';
 
 export interface MingRoute extends IRoute {
-  title: string;
+  title?: string;
   privilegeId?: string;
   routes?: MingRoute[];
 }

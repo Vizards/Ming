@@ -27,7 +27,7 @@ export default () => {
         </Descriptions.Item>
         <Descriptions.Item label="当前页面固定路由">/car/all</Descriptions.Item>
         <Descriptions.Item label="当前页面权限 ID（privilegeId）">
-          查看检测数据 > 查看全部车辆
+          查看检测数据 {">"} 查看全部车辆
         </Descriptions.Item>
       </Descriptions>
       <Divider />

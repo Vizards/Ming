@@ -1,10 +1,10 @@
 import React from 'react';
-import { history, useRootExports } from 'umi';
+import { history, useModel } from 'umi';
 import { Descriptions, Button, Divider } from 'antd';
 import styles from './index.less';
 
 export default () => {
-  const { privileges } = useRootExports();
+  const { privileges } = useModel('@@qiankunStateFromMaster')
   const disabled = privileges._banned().includes('查看车辆详情');
   return (
     <div className={styles.container}>
@@ -19,7 +19,7 @@ export default () => {
           /car/overproof
         </Descriptions.Item>
         <Descriptions.Item label="当前页面权限 ID（privilegeId）">
-          查看检测数据 > 查看超标车辆
+          查看检测数据 {">"} 查看超标车辆
         </Descriptions.Item>
       </Descriptions>
       <Divider />

@@ -1,5 +1,5 @@
 import React from 'react';
-import { useRootExports } from 'umi';
+import { useModel } from 'umi';
 import { Form, Input, Button, Tree } from 'antd';
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
 import { ILoginDTO } from '@/typings/interface';
@@ -8,7 +8,7 @@ import styles from './index.less';
 
 export default () => {
   const [form] = Form.useForm();
-  const { history, generatePrivilegesTreeData } = useRootExports();
+  const { rootHistory, generatePrivilegesTreeData } = useModel('@@qiankunStateFromMaster')
   const onFinish = (values: ILoginDTO) => {
     let privileges: string[] = [];
     if (values.privileges) {
@@ -25,7 +25,7 @@ export default () => {
         privileges,
       }),
     );
-    history.push('/home');
+    rootHistory.push('/home');
   };
   const privilegesTreeData: any = generatePrivilegesTreeData();
   return (

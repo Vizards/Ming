@@ -8,6 +8,10 @@ export default defineConfig({
       wrappers: ['@/wrappers/clear'],
       title: '登录',
     },
+    {
+      path: '/',
+      redirect: '/login'
+    }
   ],
   base: '/account',
   qiankun: {
