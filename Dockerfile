@@ -6,6 +6,7 @@ WORKDIR /app
 COPY . .
 
 RUN npm i
+RUN npm run build:all
 
 # Expose is NOT supported by Heroku
 # EXPOSE 3000
