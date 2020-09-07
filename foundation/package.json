@@ -19,7 +19,7 @@
     ]
   },
   "dependencies": {
-    "@umijs/plugin-qiankun": "^2.0.6",
+    "@umijs/plugin-qiankun": "2.0.6",
     "@umijs/preset-react": "1.x",
     "@umijs/test": "3.0.16",
     "lint-staged": "^10.0.9",
