@@ -2,12 +2,12 @@ import React from 'react'
 import { Spin } from 'antd'
 import { AppstoreTwoTone } from '@ant-design/icons'
 
-export default ({ spinning }: { spinning?: boolean }) => {
+export default (loading: boolean) => {
   return (
     <div style={styles.loading}>
       <Spin
         style={styles.spin}
-        spinning={spinning === undefined ? true : spinning}
+        spinning={loading === undefined ? true : loading}
         indicator={<AppstoreTwoTone spin />}
         tip="模块加载中"
         size="large"

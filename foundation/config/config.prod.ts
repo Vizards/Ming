@@ -1,5 +1,6 @@
 import { defineConfig } from 'umi';
 import { MingRoute } from "@/typings/interface";
+import { generateApps, generateRoutes } from "./config";
 
 const subApps: MingRoute[] = [
   {
@@ -71,9 +72,7 @@ const subApps: MingRoute[] = [
 export default defineConfig({
   qiankun: {
     master: {
-      apps: subApps
-        .filter(subApp => subApp.microApp !== undefined)
-        .map(subApp => ({ name: subApp.name, entry: subApp.entry })),
+      apps: generateApps(subApps),
       jsSandbox: false, // 是否启用 js 沙箱，默认为 false
       prefetch: true, // 是否启用 prefetch 特性，默认为 true
       defer: false, // 是否异步渲染，默认为 false
@@ -85,7 +84,5 @@ export default defineConfig({
   antd: {
     dark: false,
   },
-  routes: subApps
-    .concat([{ component: '@/pages/404' }])
-    .map(subApp => ({ ...subApp, routes: undefined }))
+  routes: generateRoutes(subApps)
 });

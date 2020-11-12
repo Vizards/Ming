@@ -1,9 +1,12 @@
 import { IRoute } from 'umi';
 
 export interface MingRoute extends IRoute {
-  title?: string;
+  name?: string;
+  microApp?: string;
+  entry?: string;
+  routes?: Omit<MingRoute, 'microApp' | 'entry'>[];
+  sidebar?: boolean;
   privilegeId?: string;
-  routes?: MingRoute[];
 }
 
 export interface TreeData extends MingRoute {
