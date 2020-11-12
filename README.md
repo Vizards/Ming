@@ -51,14 +51,14 @@ Ming/car > $ yarn start
 
 - [开发一个子应用](https://github.com/Vizards/Ming/wiki/01.-开发一个子应用)
 - [children 级子应用与 brother 级子应用](https://github.com/Vizards/Ming/wiki/02.-children-级子应用和-brother-级子应用)
-- [DOM 级权限控制](https://github.com/Vizards/Ming/wiki/03.-DOM-级权限控制)
-- [基座声明式路由](https://github.com/Vizards/Ming/wiki/04.-基座声明式路由)
+- [基座声明式路由](https://github.com/Vizards/Ming/wiki/03.-基座声明式路由)
+- [DOM 级权限控制](https://github.com/Vizards/Ming/wiki/04.-DOM-级权限控制)
 - [微前端下 BrowserHistory Mode 的 404 问题](https://github.com/Vizards/Ming/wiki/05.-微前端下-BrowserHistory-Mode-的-404-问题)
 
 ### 开发资源
 
 - [UmiJS](https://umijs.org)
-- [@umijs/plugin-qiankun@next](https://github.com/umijs/plugins/blob/master/packages/plugin-qiankun)
+- [@umijs/plugin-qiankun](https://github.com/umijs/plugins/blob/master/packages/plugin-qiankun)
 - [Umi Hooks](https://hooks.umijs.org)
 - [Formily](https://formilyjs.org/)
 
@@ -70,7 +70,7 @@ Ming/car > $ yarn start
 
 ### OSS 托管子应用
 
-各个子应用应分别托管到 OSS 后，暴露自己的入口 `index.html` 路径给基座应用，即类似如下的
+各个子应用应分别托管到 OSS 后，暴露自己的入口 `index.html` 路径给基座应用。从版本 1.1.0 开始，集中子应用配置项到
 `foundation/config/config.prod.ts`：
 
 ```javascript
@@ -78,9 +78,17 @@ const subApps = [
   ...
   {
     name: 'account',
+    microApp: 'account',
     entry: 'https://oss.myname.cloud.com/micro_subapp/account/index.html',
-    base: '/account',
-    mountElementId: 'root-account'
+    path: 'account',
+    title: '账户',
+    wrappers: ['@/wrappers/brother'],
+    routes: [
+      {
+        path: '/account/login',
+        title: '登录',
+      },
+    ],
   },
   ...
 ]
