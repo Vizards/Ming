@@ -45,7 +45,7 @@ Ming/car > $ yarn start
 
 # 本地开发
 
-本地开发时，子应用运行在不同的端口，集中配置在基座应用的 `config/config.js` 中。
+本地开发时，子应用运行在不同的端口，集中配置在基座应用的 `config/config.dev.ts` 中。
 
 ### 说明文档
 
