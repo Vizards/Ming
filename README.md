@@ -50,7 +50,7 @@ Ming/car > $ yarn start
 ### 说明文档
 
 - [开发一个子应用](https://github.com/Vizards/Ming/wiki/01.-开发一个子应用)
-- [children 级子应用与 brother 级子应用](https://github.com/Vizards/Ming/wiki/02.-children-级子应用和-brother-级子应用)
+- [children 级子应用与 brother 级子应用](https://github.com/Vizards/Ming/wiki/02.-children-级子应用与-brother-级子应用)
 - [基座声明式路由](https://github.com/Vizards/Ming/wiki/03.-基座声明式路由)
 - [DOM 级权限控制](https://github.com/Vizards/Ming/wiki/04.-DOM-级权限控制)
 - [微前端下 BrowserHistory Mode 的 404 问题](https://github.com/Vizards/Ming/wiki/05.-微前端下-BrowserHistory-Mode-的-404-问题)
