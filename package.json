@@ -1,6 +1,6 @@
 {
   "name": "ming",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Ming means Sun and Moon, A framework worked with qiankun and umi3.x",
   "main": "app.js",
   "scripts": {

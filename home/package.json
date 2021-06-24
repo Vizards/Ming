@@ -21,14 +21,14 @@
     ]
   },
   "dependencies": {
-    "@umijs/plugin-qiankun": "^2.11.0",
+    "@umijs/plugin-qiankun": "^2.25.1",
     "@umijs/preset-react": "1.x",
-    "@umijs/test": "^3.2.19",
-    "lint-staged": "^10.0.9",
-    "prettier": "^2.1.1",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "umi": "^3.2.19",
+    "@umijs/test": "^3.4.25",
+    "lint-staged": "^11.0.0",
+    "prettier": "^2.3.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "umi": "^3.4.25",
     "yorkie": "^2.0.0"
   }
 }
