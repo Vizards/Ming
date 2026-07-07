@@ -9,7 +9,9 @@
     "build:account": "cd account && npm install && npm run build:qiankun && rm -rf ../dist/account/ && cp -rvf dist ../dist/account",
     "build:home": "cd home && npm install && npm run build:qiankun && rm -rf ../dist/home/ && cp -rvf dist ../dist/home",
     "build:car": "cd car && npm install && npm run build:qiankun && rm -rf ../dist/car/ && cp -rvf dist ../dist/car",
-    "copy": "rm -rf dist && mkdir dist && cp app.js dist/ && cp package.json dist/ && cp Dockerfile dist/"
+    "copy": "rm -rf dist && mkdir dist && cp app.js dist/ && cp package.json dist/ && cp Dockerfile dist/ && cp .assetsignore dist/",
+    "preview": "wrangler dev",
+    "deploy": "wrangler deploy"
   },
   "repository": {
     "type": "git",
@@ -34,6 +36,7 @@
   "devDependencies": {
     "lint-staged": "^10.3.0",
     "prettier": "^2.1.1",
+    "wrangler": "^4.107.0",
     "yorkie": "^2.0.0"
   },
   "gitHooks": {

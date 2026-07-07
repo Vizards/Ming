@@ -1,0 +1,14 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "ming",
+  "compatibility_date": "2026-07-07",
+  "assets": {
+    "directory": "./dist",
+    // 复刻 app.js 的路由逻辑:
+    // - html_handling: none  → 访问 /account 不会被重定向去 serve dist/account/index.html
+    // - single-page-application → 所有未命中静态文件的路径回退到根 index.html(基座应用)
+    // 而 /account/index.html 这类精确文件路径(qiankun 子应用 entry)仍按文件返回
+    "html_handling": "none",
+    "not_found_handling": "single-page-application"
+  }
+}

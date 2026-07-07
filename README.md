@@ -6,7 +6,7 @@
 
 <p align="center">📦开箱即用的微前端工程方案，基于 umi3.x + qiankun@next</p>
 <p align="center">🍳从实际中台项目孵化，精简的 开发→构建→部署 全流程应用方案</p>
-<p align="center">🧭Demo Site：<a href="https://microfe.herokuapp.com">microfe.herokuapp.com</a></p>
+<p align="center">🧭Demo Site：<a href="https://ming.gvizards.workers.dev">ming.gvizards.workers.dev</a></p>
 <br/>
 
 # 快速开始
@@ -102,6 +102,16 @@ const subApps = [
 参考 `app.js` 简单处理静态文件与路由冲突导致的 404 问题即可部署。
 
 ### 生产环境运行
+
+#### 部署到 Cloudflare Workers（推荐）：
+
+路由逻辑由 `wrangler.jsonc` 中的静态资源配置实现（等价于 `app.js`），无需运行 Node 服务。
+首次使用请先 `npx wrangler login` 完成授权。
+
+```shell script
+Ming > $ npm run preview  # 本地预览
+Ming > $ npm run deploy   # 发布到 Cloudflare
+```
 
 #### 不使用 Docker，直接运行 Node 服务：
 
